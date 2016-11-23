@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainUISkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:game="game.*" xmlns:w="http://ns.egret.com/wing">
+	<game:RoleInfo id="roleInfo" x="0" y="0" width="600" height="120" skinName="RolleInfoSkin"/>
+	<game:FunctionBar id="functionBar" x="475" y="117" skinName="FunctionBarSkin"/>
+	<game:ActivityBar id="activityBar" x="-8" y="1014" skinName="ActivityBarSkin"/>
+	<e:Button id="mainBtn" label="" x="494" y="1018" scaleX="1" scaleY="1">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="mainBtn_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

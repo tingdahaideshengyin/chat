@@ -1,0 +1,364 @@
+{
+	"groups": [
+		{
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,homeCity_jpg,activityBtn_png,backpackBtn_png,bgBarBg_png,chuangDangBtn_png,closeBtn_png,friendBtn_png,headBg_png,hengImg_png,infoBtn_png,jinjieBtn_png,kaiFuBtn_png,lianqiBtn_png,lunjianBtn_png,mainBtn_png,mapBtn_png,missionBtn_png,pgBar1_png,pgBar2_png,qianghuaBtn_png,roleBtn_png,roleInfoImg_png,shopBtn_png,shuImg_png,warBtn_png,zhaoXianBtn_png,BeiBaoPanel_jpg,ChuangDangPannel_jpg,HuoDongPanel_jpg,KaiFuPanel_jpg,MapPanel_jpg,MessagePanel_jpg,QiangHuaPanel_jpg,RolePanel_jpg,ShopPanel_jpg,ZhaoXianPanel_jpg,scene2_jpeg,scene3_jpeg,loadingCircle_png,tipsBg_png,yellowBtn_png,template_json,template_proto",
+			"name": "preload"
+		},
+		{
+			"keys": "PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_jpg",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/CheckBox/checkbox_select_disabled.png",
+			"type": "image",
+			"name": "checkbox_select_disabled_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_down.png",
+			"type": "image",
+			"name": "checkbox_select_down_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_up.png",
+			"type": "image",
+			"name": "checkbox_select_up_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_unselect.png",
+			"type": "image",
+			"name": "checkbox_unselect_png"
+		},
+		{
+			"url": "assets/ItemRenderer/selected.png",
+			"type": "image",
+			"name": "selected_png"
+		},
+		{
+			"url": "assets/Panel/border.png",
+			"type": "image",
+			"name": "border_png"
+		},
+		{
+			"url": "assets/Panel/header.png",
+			"type": "image",
+			"name": "header_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "assets/ScrollBar/roundthumb.png",
+			"type": "image",
+			"name": "roundthumb_png"
+		},
+		{
+			"url": "assets/Slider/thumb.png",
+			"type": "image",
+			"name": "thumb_png"
+		},
+		{
+			"url": "assets/Slider/track.png",
+			"type": "image",
+			"name": "track_png"
+		},
+		{
+			"url": "assets/Slider/tracklight.png",
+			"type": "image",
+			"name": "tracklight_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/handle.png",
+			"type": "image",
+			"name": "handle_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/off.png",
+			"type": "image",
+			"name": "off_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/on.png",
+			"type": "image",
+			"name": "on_png"
+		},
+		{
+			"url": "assets/Button/button_down.png",
+			"type": "image",
+			"name": "button_down_png"
+		},
+		{
+			"url": "assets/Button/button_up.png",
+			"type": "image",
+			"name": "button_up_png"
+		},
+		{
+			"url": "assets/ProgressBar/thumb_pb.png",
+			"type": "image",
+			"name": "thumb_pb_png"
+		},
+		{
+			"url": "assets/ProgressBar/track_pb.png",
+			"type": "image",
+			"name": "track_pb_png"
+		},
+		{
+			"url": "assets/ScrollBar/track_sb.png",
+			"type": "image",
+			"name": "track_sb_png"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "images/loading/PreLoadingBar.png",
+			"type": "image",
+			"name": "PreLoadingBar_png"
+		},
+		{
+			"url": "images/loading/PreLoadingBarBg.png",
+			"type": "image",
+			"name": "PreLoadingBarBg_png"
+		},
+		{
+			"url": "images/loading/PreLoadingBg.jpg",
+			"type": "image",
+			"name": "PreLoadingBg_jpg"
+		},
+		{
+			"url": "images/scene/homeCity.jpg",
+			"type": "image",
+			"name": "homeCity_jpg"
+		},
+		{
+			"url": "main/activityBtn.png",
+			"type": "image",
+			"name": "activityBtn_png"
+		},
+		{
+			"url": "main/backpackBtn.png",
+			"type": "image",
+			"name": "backpackBtn_png"
+		},
+		{
+			"url": "main/bgBarBg.png",
+			"type": "image",
+			"name": "bgBarBg_png"
+		},
+		{
+			"url": "main/chuangDangBtn.png",
+			"type": "image",
+			"name": "chuangDangBtn_png"
+		},
+		{
+			"url": "main/closeBtn.png",
+			"type": "image",
+			"name": "closeBtn_png"
+		},
+		{
+			"url": "main/friendBtn.png",
+			"type": "image",
+			"name": "friendBtn_png"
+		},
+		{
+			"url": "main/headBg.png",
+			"type": "image",
+			"name": "headBg_png"
+		},
+		{
+			"url": "main/hengImg.png",
+			"type": "image",
+			"name": "hengImg_png"
+		},
+		{
+			"url": "main/infoBtn.png",
+			"type": "image",
+			"name": "infoBtn_png"
+		},
+		{
+			"url": "main/jinjieBtn.png",
+			"type": "image",
+			"name": "jinjieBtn_png"
+		},
+		{
+			"url": "main/kaiFuBtn.png",
+			"type": "image",
+			"name": "kaiFuBtn_png"
+		},
+		{
+			"url": "main/lianqiBtn.png",
+			"type": "image",
+			"name": "lianqiBtn_png"
+		},
+		{
+			"url": "main/lunjianBtn.png",
+			"type": "image",
+			"name": "lunjianBtn_png"
+		},
+		{
+			"url": "main/mainBtn.png",
+			"type": "image",
+			"name": "mainBtn_png"
+		},
+		{
+			"url": "main/mapBtn.png",
+			"type": "image",
+			"name": "mapBtn_png"
+		},
+		{
+			"url": "main/missionBtn.png",
+			"type": "image",
+			"name": "missionBtn_png"
+		},
+		{
+			"url": "main/pgBar1.png",
+			"type": "image",
+			"name": "pgBar1_png"
+		},
+		{
+			"url": "main/pgBar2.png",
+			"type": "image",
+			"name": "pgBar2_png"
+		},
+		{
+			"url": "main/qianghuaBtn.png",
+			"type": "image",
+			"name": "qianghuaBtn_png"
+		},
+		{
+			"url": "main/roleBtn.png",
+			"type": "image",
+			"name": "roleBtn_png"
+		},
+		{
+			"url": "main/roleInfoImg.png",
+			"type": "image",
+			"name": "roleInfoImg_png"
+		},
+		{
+			"url": "main/shopBtn.png",
+			"type": "image",
+			"name": "shopBtn_png"
+		},
+		{
+			"url": "main/shuImg.png",
+			"type": "image",
+			"name": "shuImg_png"
+		},
+		{
+			"url": "main/warBtn.png",
+			"type": "image",
+			"name": "warBtn_png"
+		},
+		{
+			"url": "main/zhaoXianBtn.png",
+			"type": "image",
+			"name": "zhaoXianBtn_png"
+		},
+		{
+			"url": "images/panel/BeiBaoPanel.jpg",
+			"type": "image",
+			"name": "BeiBaoPanel_jpg"
+		},
+		{
+			"url": "images/panel/ChuangDangPannel.jpg",
+			"type": "image",
+			"name": "ChuangDangPannel_jpg"
+		},
+		{
+			"url": "images/panel/HuoDongPanel.jpg",
+			"type": "image",
+			"name": "HuoDongPanel_jpg"
+		},
+		{
+			"url": "images/panel/KaiFuPanel.jpg",
+			"type": "image",
+			"name": "KaiFuPanel_jpg"
+		},
+		{
+			"url": "images/panel/MapPanel.jpg",
+			"type": "image",
+			"name": "MapPanel_jpg"
+		},
+		{
+			"url": "images/panel/MessagePanel.jpg",
+			"type": "image",
+			"name": "MessagePanel_jpg"
+		},
+		{
+			"url": "images/panel/QiangHuaPanel.jpg",
+			"type": "image",
+			"name": "QiangHuaPanel_jpg"
+		},
+		{
+			"url": "images/panel/RolePanel.jpg",
+			"type": "image",
+			"name": "RolePanel_jpg"
+		},
+		{
+			"url": "images/panel/ShopPanel.jpg",
+			"type": "image",
+			"name": "ShopPanel_jpg"
+		},
+		{
+			"url": "images/panel/ZhaoXianPanel.jpg",
+			"type": "image",
+			"name": "ZhaoXianPanel_jpg"
+		},
+		{
+			"url": "images/scene/scene2.jpeg",
+			"type": "image",
+			"name": "scene2_jpeg"
+		},
+		{
+			"url": "images/scene/scene3.jpeg",
+			"type": "image",
+			"name": "scene3_jpeg"
+		},
+		{
+			"url": "images/loadingCircle.png",
+			"type": "image",
+			"name": "loadingCircle_png"
+		},
+		{
+			"url": "images/tipsBg.png",
+			"type": "image",
+			"name": "tipsBg_png"
+		},
+		{
+			"url": "images/yellowBtn.png",
+			"type": "image",
+			"name": "yellowBtn_png"
+		},
+		{
+			"url": "data/template.json",
+			"type": "json",
+			"name": "template_json"
+		},
+		{
+			"url": "net/template.proto",
+			"type": "text",
+			"name": "template_proto"
+		}
+	]
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MapPannel" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="MapPanel_jpg"/>
+	<e:Image id="img3" x="114" y="266" source="activityBtn_png" scaleX="1" scaleY="1"/>
+	<e:Image id="img2" x="375" y="248" source="activityBtn_png" scaleX="1" scaleY="1"/>
+	<e:Image id="img1" x="365" y="68" source="activityBtn_png" scaleX="1" scaleY="1"/>
+	<e:Image id="img0" x="118" y="75" source="activityBtn_png" scaleX="1" scaleY="1"/>
+	<e:Button label="Tips特效6" x="496" y="922" id="btn5"/>
+	<e:Button label="Tips特效5" x="46" y="917" id="btn4"/>
+	<e:Button label="Tips特效4" x="487" y="724" id="btn3"/>
+	<e:Button label="Tips特效3" x="44" y="731" id="btn2"/>
+	<e:Button id="btn1" label="Tips特效2" x="480" y="537" scaleX="1" scaleY="1"/>
+	<e:Button label="Tips特效1" x="43" y="543" id="btn0"/>
+	<e:Button id="closeBtn" label="" x="533" y="-9">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="closeBtn_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

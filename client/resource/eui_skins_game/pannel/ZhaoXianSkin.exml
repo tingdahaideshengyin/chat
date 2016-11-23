@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZhaoXianSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="ZhaoXianPanel_jpg"/>
+	<e:Label text="目前自定义了三种，后续扩展" x="112" y="84" anchorOffsetY="0" height="50"/>
+	<e:Button id="closeBtn" label="X" x="554" y="7" anchorOffsetX="0" width="78" anchorOffsetY="0" height="47"/>
+</e:Skin>

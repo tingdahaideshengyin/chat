@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShopPanelSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="ShopPanel_jpg"/>
+	<e:Button label="图片特效10" x="406" y="1052" id="btn9"/>
+	<e:Button label="图片特效09" x="109" y="1052" id="btn8"/>
+	<e:Button label="图片特效08" x="414" y="812" id="btn7"/>
+	<e:Button label="图片特效07" x="109" y="817" id="btn6"/>
+	<e:Button label="图片特效06" x="406" y="571" id="btn5"/>
+	<e:Button label="图片特效05" x="111" y="563" id="btn4"/>
+	<e:Button label="图片特效04" x="413" y="345" id="btn3"/>
+	<e:Button label="图片特效03" x="113" y="349" id="btn2"/>
+	<e:Button label="图片特效02" x="399" y="132" id="btn1"/>
+	<e:Button id="closeBtn" label="X" x="591" y="17" anchorOffsetX="0" width="44" anchorOffsetY="0" height="38" scaleX="1" scaleY="1"/>
+	<e:Image id="img9" x="416" y="916" source="activityBtn_png"/>
+	<e:Image id="img8" x="111" y="912" source="activityBtn_png"/>
+	<e:Image id="img7" x="415" y="677" source="activityBtn_png"/>
+	<e:Image id="img6" x="115" y="671" source="activityBtn_png"/>
+	<e:Image id="img5" x="416" y="433" source="activityBtn_png"/>
+	<e:Image id="img4" x="110" y="427" source="activityBtn_png"/>
+	<e:Image id="img3" x="413" y="207" source="activityBtn_png"/>
+	<e:Image id="img2" x="108" y="211" source="activityBtn_png"/>
+	<e:Image id="img1" x="402" y="9" source="activityBtn_png"/>
+	<e:Image id="img0" x="102" y="1" source="activityBtn_png"/>
+	<e:Button id="btn0" label="图片特效01" x="101" y="133"/>
+</e:Skin>

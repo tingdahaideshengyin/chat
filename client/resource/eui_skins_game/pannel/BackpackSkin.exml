@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BackpackSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="BeiBaoPanel_jpg"/>
+	<e:Button id="saveBtn" label="保存Proxy数据" x="63" y="307"/>
+	<e:Button id="readBtn" label="读取Proxy数据" x="428" y="306"/>
+	<e:Label text="存入数据" x="242" y="70"/>
+	<e:TextInput id="inputText" x="50" y="120" anchorOffsetX="0" width="538" text="请输入" anchorOffsetY="0" height="132"/>
+	<e:Button id="closeBtn" label="X" x="574" y="6" anchorOffsetX="0" width="60"/>
+	<e:Label id="showText" text="" x="43" y="491" anchorOffsetX="0" width="552" anchorOffsetY="0" height="613" background="true" backgroundColor="0x000000"/>
+	<e:Label text="显示面板" x="265" y="446"/>
+</e:Skin>

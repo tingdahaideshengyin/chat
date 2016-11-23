@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RolePanelSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="RolePanel_jpg"/>
+	<e:TextInput id="inputText" x="169" y="260" text="请输入"/>
+	<e:Label text=" 输入属性名称(name/sex/age)" x="119" y="202"/>
+	<e:Label text=" 输入主键名称(1001~1009)" x="143" y="63"/>
+	<e:TextInput id="keyInputText" x="171" y="126" text="请输入"/>
+	<e:Button id="readExcelBtn" label="读取excel数据" x="257" y="354"/>
+	<e:Label id="showText" text="" x="118" y="464" anchorOffsetX="0" width="423" background="true" backgroundColor="0x000000" anchorOffsetY="0" height="614"/>
+	<e:Button id="closeBtn" label="X" x="566" y="7" anchorOffsetX="0" width="66"/>
+</e:Skin>

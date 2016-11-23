@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="QiangHuaPanSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="QiangHuaPanel_jpg"/>
+	<e:Button id="closeBtn" label="X" x="589" y="8" anchorOffsetX="0" width="43" anchorOffsetY="0" height="34" scaleX="1" scaleY="1"/>
+	<e:Label text="userId(number)类型：" x="171" y="74"/>
+	<e:Label text="userName：" x="225" y="183" anchorOffsetX="0" width="173"/>
+	<e:Button id="sendBtn" label="发送消息" x="492" y="358" scaleX="1" scaleY="1"/>
+	<e:Button id="loadBtn" label="连接服务器" x="54" y="357" scaleX="1" scaleY="1"/>
+	<e:TextInput id="idInputText" x="166" y="124" text="1001"/>
+	<e:TextInput id="nameInputText" x="165" y="234" text="新哥"/>
+	<e:Label id="showText" text="" x="52" y="428" anchorOffsetX="0" width="539" anchorOffsetY="0" height="620" background="true" backgroundColor="0x000000"/>
+</e:Skin>

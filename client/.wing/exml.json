@@ -1,0 +1,47 @@
+{
+    "1583f307265": {
+        "path": "core/view/main/ActivityBar.ts",
+        "class": "ActivityBar",
+        "parentPath": ""
+    },
+    "1583f47d33c": {
+        "path": "core/view/main/FunctionBar.ts",
+        "class": "FunctionBar",
+        "parentPath": ""
+    },
+    "1583f575f04": {
+        "path": "core/view/main/RoleInfo.ts",
+        "class": "RoleInfo",
+        "parentPath": ""
+    },
+    "15858314a25": {
+        "path": "core/view/pannel/pannel/ShopPanel.ts",
+        "class": "ShopPanel",
+        "parentPath": ""
+    },
+    "15858c09397": {
+        "path": "core/view/pannel/pannel/ChuangDang.ts",
+        "class": "ChuangDang",
+        "parentPath": ""
+    },
+    "1585c1b5a78": {
+        "path": "core/view/pannel/pannel/ZhaoXian.ts",
+        "class": "ZhaoXian",
+        "parentPath": ""
+    },
+    "1585ce26c73": {
+        "path": "core/view/pannel/pannel/Backpack.ts",
+        "class": "Backpack",
+        "parentPath": ""
+    },
+    "1585d142262": {
+        "path": "core/view/pannel/pannel/RolePanel.ts",
+        "class": "RolePanel",
+        "parentPath": ""
+    },
+    "158631cc1ab": {
+        "path": "core/view/pannel/pannel/QiangHuaPanel.ts",
+        "class": "QiangHuaPanel",
+        "parentPath": ""
+    }
+}

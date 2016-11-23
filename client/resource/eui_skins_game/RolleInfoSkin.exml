@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RolleInfoSkin" width="600" height="120" xmlns:e="http://ns.egret.com/eui">
+	<e:Image width="506" height="119" x="0" y="0" source="roleInfoImg_png"/>
+</e:Skin>
