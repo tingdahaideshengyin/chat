@@ -36,6 +36,7 @@
     "resource/eui_skins_game/RolleInfoSkin.exml",
     "resource/eui_skins_game/MainUISkin.exml",
     "resource/eui_skins_game/pannel/BackpackSkin.exml",
+    "resource/eui_skins_game/pannel/ChartSkin.exml",
     "resource/eui_skins_game/pannel/ChuangDangSkin.exml",
     "resource/eui_skins_game/pannel/MapPannel.exml",
     "resource/eui_skins_game/pannel/QiangHuaPanSkin.exml",

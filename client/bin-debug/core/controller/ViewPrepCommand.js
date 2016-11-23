@@ -29,6 +29,8 @@ var game;
             this.facade().registerMediator(new game.RoleMediator());
             //注册强化UI
             this.facade().registerMediator(new game.QiangHuaMediator());
+            //注册消息按钮UI
+            this.facade().registerMediator(new game.MessagePanelMediator());
         };
         return ViewPrepCommand;
     }(puremvc.SimpleCommand));

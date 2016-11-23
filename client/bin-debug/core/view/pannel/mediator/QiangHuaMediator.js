@@ -29,7 +29,7 @@ var game;
                     this.closePanel(1);
                     break;
                 case SysNotify.CONNECT_SERVER_SUCCESS:
-                    this.qiangHuaPanel.showText.text += "服务器连接成功...、\n";
+                    this.qiangHuaPanel.showText.text += "服务器连接成功...\n";
                     break;
                 case UserInfoNotify.UPDATE_DATA:
                     this.qiangHuaPanel.showText.text += "userID:" + data.getUserId() + "\nuserName:" + data.getUserName();

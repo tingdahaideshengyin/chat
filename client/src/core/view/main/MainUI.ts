@@ -60,6 +60,8 @@ module game {
 			this.functionBar.backpackBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackpackBtnTouch, this);
 			//角色按钮点击事件
 			this.functionBar.roleBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRoleBtnTouch, this);
+			//消息按钮点击事件
+			this.activityBar.infoBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onInfoBtnTouch, this);
 		}
 
 		/*-----------------------------------------------------------------------------------------
@@ -167,6 +169,12 @@ module game {
 		private onRoleBtnTouch(evt:egret.TouchEvent):void
 		{
 			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_ROLE);
+		}
+
+		//消息按钮点击事件
+		private onInfoBtnTouch(evt:egret.TouchEvent):void
+		{
+			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_MESSAGE);
 		}
 	}
 }

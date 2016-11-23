@@ -40,6 +40,10 @@ var PanelNotify = (function () {
     PanelNotify.OPEN_MAP = "PANELNOTIFY_OPEN_MAP";
     //关闭地图
     PanelNotify.CLOSE_MAP = "PANELNOTIFY_CLOSE_MAP";
+    //打开消息
+    PanelNotify.OPEN_MESSAGE = "PANELNOTIFY_OPEN_MESSAGE";
+    //关闭消息
+    PanelNotify.CLOSE_MESSAGE = "PANELNOTIFY_CLOSE_MESSAGE";
     return PanelNotify;
 }());
 egret.registerClass(PanelNotify,'PanelNotify');
