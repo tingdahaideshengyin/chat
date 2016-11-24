@@ -15,6 +15,9 @@ module chart {
 
 		/** 文字背景 */
 		private backGrounpImage:egret.Bitmap;
+		/** 玩家头像 */
+		private playerHeadIcon:egret.Bitmap;
+
 		/** 文本框 */
 		private textInfo:egret.TextField;
 		/** 名字文本框 */
