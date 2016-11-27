@@ -59,6 +59,13 @@ class PanelNotify{
     //关闭地图
     public static CLOSE_MAP: string = "PANELNOTIFY_CLOSE_MAP";
 
+
+    //打开消息
+    public static OPEN_MESSAGE: string = "PANELNOTIFY_OPEN_MESSAGE";
+
+    //关闭消息
+    public static CLOSE_MESSAGE: string = "PANELNOTIFY_CLOSE_MESSAGE";
+
 }	
 
 

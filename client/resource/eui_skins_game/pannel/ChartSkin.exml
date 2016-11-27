@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChartSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:TextInput id="nameInput" x="229" y="1000" anchorOffsetX="0" width="371" anchorOffsetY="0" height="59"/>
+	<e:TextInput id="textInput" x="24" y="700" anchorOffsetX="0" width="600" anchorOffsetY="0" height="208"/>
+	<e:Button id="sendInfoBtn" label="发送消息" x="282" y="922"/>
+	<e:Label text="设置你的昵称" x="26" y="1017"/>
+	<e:Label text="" x="24" y="150" anchorOffsetX="0" width="600" background="true" backgroundColor="0xFFFFFF" anchorOffsetY="0" height="546"/>
+	<e:Label text="好友：张老子" x="24" y="95" width="600" background="true" backgroundColor="0xceb6a2" anchorOffsetY="0" height="56" textAlign="center" verticalAlign="middle"/>
+	<e:Button id="closeBtn" label="x" x="578" y="102" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40"/>
+	<e:Label text="跟哥一起聊人生" x="230" y="34"/>
+</e:Skin>

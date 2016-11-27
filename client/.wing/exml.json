@@ -43,5 +43,10 @@
         "path": "core/view/pannel/pannel/QiangHuaPanel.ts",
         "class": "QiangHuaPanel",
         "parentPath": ""
+    },
+    "15891babd1f": {
+        "path": "core/view/pannel/pannel/MessagePanel.ts",
+        "class": "MessagePanel",
+        "parentPath": ""
     }
 }

@@ -62,6 +62,8 @@ declare class RolleInfoSkin extends eui.Skin{
 }
 declare class BackpackSkin extends eui.Skin{
 }
+declare class ChartSkin extends eui.Skin{
+}
 declare class ChuangDangSkin extends eui.Skin{
 }
 declare class MapPannel extends eui.Skin{

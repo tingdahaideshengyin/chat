@@ -22,5 +22,11 @@ module game {
 			//game.Appfacade.getinstance().registerMediator(new RoleMediator(this));
 			//GameLayerManager.gameLayer().sceneLayer.addChild(this);
 		}
+
+		/*-----------------------------------------------------------------------------------------
+										        UI初始化设置
+		-----------------------------------------------------------------------------------------*/
+		//消息按钮
+		public infoBtn:eui.Button;
 	}
 }
