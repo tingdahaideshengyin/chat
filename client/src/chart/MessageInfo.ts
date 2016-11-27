@@ -1,17 +1,27 @@
 module chart {
 	export class MessageInfo {
 
-		/** 消息类型0=自己，1=其他 */
-		private _type:number = 0;
+		//消息数据
+		private _data:chart.MessageData;
+		//消息视图
+		private _view:chart.MessageView;
 
-		public constructor(type:number=0) {
-			this._type = type;
+		/**
+		 * playerName=玩家名字
+		 * headIconName = 头像资源名字
+		 * saidText = 消息内容
+		 * type=消息类型；0=自己发送的消息，1=接受到别人的消息
+		 * time=发送消息的时间
+		 */
+		public constructor(playerName:string, headIconName:string, saidText:string, type:number, time:number) {
+			this._data = new chart.MessageData(playerName, headIconName, saidText, type, time);
+			this._view = new chart.MessageView(playerName, headIconName, saidText, type, time);
 		}
 
 
 
-		private _view:chart.MessageView;
-		private _data:chart.MessageData;
+		
+		
 		/*-----------------------------------------------------------------------------------------
 										        初始化UI
 		-----------------------------------------------------------------------------------------*/
@@ -19,6 +29,10 @@ module chart {
 		//设置视图
 
 
+		//显示名字
+		private showName():void{
+			
+		}
 
 		/*-----------------------------------------------------------------------------------------
 										    	公共方法

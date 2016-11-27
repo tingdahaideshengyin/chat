@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,homeCity_jpg,activityBtn_png,backpackBtn_png,bgBarBg_png,chuangDangBtn_png,closeBtn_png,friendBtn_png,headBg_png,hengImg_png,infoBtn_png,jinjieBtn_png,kaiFuBtn_png,lianqiBtn_png,lunjianBtn_png,mainBtn_png,mapBtn_png,missionBtn_png,pgBar1_png,pgBar2_png,qianghuaBtn_png,roleBtn_png,roleInfoImg_png,shopBtn_png,shuImg_png,warBtn_png,zhaoXianBtn_png,BeiBaoPanel_jpg,ChuangDangPannel_jpg,HuoDongPanel_jpg,KaiFuPanel_jpg,MapPanel_jpg,MessagePanel_jpg,QiangHuaPanel_jpg,RolePanel_jpg,ShopPanel_jpg,ZhaoXianPanel_jpg,scene2_jpeg,scene3_jpeg,loadingCircle_png,tipsBg_png,yellowBtn_png,template_json,template_proto",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,homeCity_jpg,activityBtn_png,backpackBtn_png,bgBarBg_png,chuangDangBtn_png,closeBtn_png,friendBtn_png,headBg_png,hengImg_png,infoBtn_png,jinjieBtn_png,kaiFuBtn_png,lianqiBtn_png,lunjianBtn_png,mainBtn_png,mapBtn_png,missionBtn_png,pgBar1_png,pgBar2_png,qianghuaBtn_png,roleBtn_png,roleInfoImg_png,shopBtn_png,shuImg_png,warBtn_png,zhaoXianBtn_png,BeiBaoPanel_jpg,ChuangDangPannel_jpg,HuoDongPanel_jpg,KaiFuPanel_jpg,MapPanel_jpg,MessagePanel_jpg,QiangHuaPanel_jpg,RolePanel_jpg,ShopPanel_jpg,ZhaoXianPanel_jpg,scene2_jpeg,scene3_jpeg,loadingCircle_png,tipsBg_png,yellowBtn_png,template_json,template_proto,head1_jpg,head2_jpg,head3_jpg,head4_jpg,head5_jpg",
 			"name": "preload"
 		},
 		{
@@ -359,6 +359,31 @@
 			"url": "net/template.proto",
 			"type": "text",
 			"name": "template_proto"
+		},
+		{
+			"name": "head1_jpg",
+			"type": "image",
+			"url": "images/head/head1.jpg"
+		},
+		{
+			"name": "head2_jpg",
+			"type": "image",
+			"url": "images/head/head2.jpg"
+		},
+		{
+			"name": "head3_jpg",
+			"type": "image",
+			"url": "images/head/head3.jpg"
+		},
+		{
+			"name": "head4_jpg",
+			"type": "image",
+			"url": "images/head/head4.jpg"
+		},
+		{
+			"name": "head5_jpg",
+			"type": "image",
+			"url": "images/head/head5.jpg"
 		}
 	]
 }
