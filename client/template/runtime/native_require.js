@@ -76,6 +76,7 @@ var game_file_list = [
 	"bin-debug/loading/LoadingUI2.js",
 	"bin-debug/loading/WaitPanel.js",
 	"bin-debug/net/SocketManager.js",
+	"bin-debug/net/SocketManagerNew.js",
 	"bin-debug/pure_mvc/multicore/core/Controller.js",
 	"bin-debug/pure_mvc/multicore/core/Model.js",
 	"bin-debug/pure_mvc/multicore/core/View.js",

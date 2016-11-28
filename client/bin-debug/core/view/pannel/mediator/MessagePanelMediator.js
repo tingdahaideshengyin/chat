@@ -26,7 +26,8 @@ var game;
                 PanelNotify.OPEN_MESSAGE,
                 PanelNotify.CLOSE_MESSAGE,
                 ChartNotify.SEND_CHART_MESSAGE,
-                ChartNotify.RECEIVE_CHART_MESSAGE
+                ChartNotify.RECEIVE_CHART_MESSAGE,
+                SysNotify.CONNECT_SERVER_SUCCESS,
             ];
         };
         p.handleNotification = function (notification) {
@@ -35,16 +36,22 @@ var game;
                 case PanelNotify.OPEN_MESSAGE:
                     //显示消息面板
                     this.showUI(this.messagePanel, false, 0, 0, 1);
+                    //连接服务器
+                    this.connectServer();
                     break;
                 case PanelNotify.CLOSE_MESSAGE:
                     this.closePanel(1);
                     break;
                 case ChartNotify.SEND_CHART_MESSAGE:
                     //发送消息
-                    this.showMessageView(data);
+                    this.showMessageView(data, 0);
+                    socketManagerNew.SocketManagerNew.sendMessage(JSON.stringify(data));
                     break;
                 case ChartNotify.RECEIVE_CHART_MESSAGE:
                     //接收到消息
+                    var jsonObject = JSON.parse(data);
+                    //var jsonObject2 = eval('(' + data + ')');
+                    this.showMessageView(jsonObject, 1);
                     break;
             }
         };
@@ -80,21 +87,19 @@ var game;
                 "playerName": playerName,
                 "headIconName": "head5_jpg",
                 "saidText": saidText,
-                "type": 0,
                 "time": 0
             };
             //var data:chart.MessageData = new chart.MessageData(playerName, "", saidText, 0, 0)
             this.facade().sendNotification(ChartNotify.SEND_CHART_MESSAGE, dataJson);
         };
-        p.showMessageView = function (data) {
+        p.showMessageView = function (data, showtType) {
             var playerName = data.playerName;
             var headIconName = data.headIconName;
             var saidText = data.saidText;
-            var type = data.type;
             var time = data.time;
-            var messageView = new chart.MessageView(playerName, headIconName, saidText, type, time);
+            var messageView = new chart.MessageView(playerName, headIconName, saidText, showtType, time);
             messageView.y = this.currentYPos;
-            if (type == 0) {
+            if (showtType == 0) {
                 messageView.x = this.messagePanel.viewScroller.width - messageView.messageWidth - 5;
             }
             //刷新视域位置
@@ -110,6 +115,12 @@ var game;
             }
             this.messagePanel.messageGroup.addChild(messageView);
             this.currentYPos += messageView.messageHeight + this.distance;
+        };
+        /*-----------------------------------------------------------------------------------------
+                                                socket通信
+        -----------------------------------------------------------------------------------------*/
+        p.connectServer = function () {
+            socketManagerNew.SocketManagerNew.connectServer("192.168.1.188", 8888);
         };
         /*-----------------------------------------------------------------------------------------
                                                 初始化界面数据
