@@ -75,7 +75,12 @@ var chart;
         p.setMessageText = function (text) {
             if (!this.textInfo) {
                 this.backGrounpImage = new egret.Bitmap();
-                this.backGrounpImage.texture = RES.getRes("tipsBg_png");
+                if (this._type == 1) {
+                    this.backGrounpImage.texture = RES.getRes("chart_other_bg_jpg");
+                }
+                else {
+                    this.backGrounpImage.texture = RES.getRes("chart_self_bg_jpg");
+                }
                 this.addChild(this.backGrounpImage);
                 this.textInfo = new egret.TextField();
                 this.textInfo.textColor = 0x000000;
@@ -117,6 +122,9 @@ var chart;
             this.addChild(this.textInfo);
             this._messageWidth = this.backGrounpImage.width + 5 + this.playerHeadIcon.width;
             this._messageHeight = this.backGrounpImage.height > this.playerHeadIcon.height ? this.backGrounpImage.height : this.playerHeadIcon.height;
+            this._messageHeight += 20;
+            this.width = this._messageWidth;
+            this.height = this._messageHeight;
         };
         /*-----------------------------------------------------------------------------------------
                                                 对外API

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="ChartSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image x="0" y="0" source="ShopPanel_jpg"/>
-	<e:TextInput id="nameInput" x="229" y="1000" anchorOffsetX="0" width="371" anchorOffsetY="0" height="59"/>
-	<e:TextInput id="textInput" x="24" y="700" anchorOffsetX="0" width="600" anchorOffsetY="0" height="208"/>
+	<e:Label text="设置你的头像：" x="4" y="1078"/>
 	<e:Button id="sendInfoBtn" label="发送消息" x="282" y="922"/>
-	<e:Label text="设置你的昵称" x="26" y="1017"/>
+	<e:Label text="设置你的昵称：" x="6" y="999"/>
 	<e:Label text="好友：张老子" x="24" y="95" width="600" background="true" backgroundColor="0xceb6a2" anchorOffsetY="0" height="56" textAlign="center" verticalAlign="middle"/>
 	<e:Button id="closeBtn" label="x" x="578" y="102" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40"/>
 	<e:Label text="跟哥一起聊人生" x="230" y="34"/>
-	<e:Image id="bgImage" width="600" height="540" x="24" y="154" source="track_png" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image id="bgImage" width="600" height="540" x="24" y="154" anchorOffsetX="0" anchorOffsetY="0" source="chart_bg_jpg"/>
+	<e:EditableText id="textInput" width="600" height="212" text="" x="24" y="700" anchorOffsetX="0" anchorOffsetY="0" background="true" backgroundColor="0xffffff" size="40" maxWidth="600" multiline="true" verticalCenter="top" textColor="0x000000"/>
+	<e:EditableText id="nameInput" width="415" height="50" text="游客" x="203" y="986" anchorOffsetX="0" anchorOffsetY="0" size="40" background="true" backgroundColor="0xffffff" textColor="0x000000"/>
+	<e:Image id="headICon_1" width="64" height="64" x="207" y="1058" source="head1_jpg" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image id="headICon_2" width="64" height="64" x="297" y="1058" source="head2_jpg"/>
+	<e:Image id="headICon_3" width="64" height="64" x="386" y="1059" source="head3_jpg"/>
+	<e:Image id="headICon_4" width="64" height="64" x="473" y="1060" source="head4_jpg"/>
+	<e:Image id="headICon_5" width="64" height="64" x="561" y="1060" source="head5_jpg"/>
 </e:Skin>

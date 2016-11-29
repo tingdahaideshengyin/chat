@@ -5,7 +5,9 @@ module socketManagerNew {
 		/** 连接服务器 */
 		public static connectServer(host:string="", port:number=80){
 			Global.showWaritPanel();
-			this.socket = new egret.WebSocket();
+			if(!this.socket){
+				this.socket = new egret.WebSocket();
+			}
 			//默认就是字符串，所以不用
 			//this.socket.type = egret.WebSocket.TYPE_STRING;
 			this.socket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);

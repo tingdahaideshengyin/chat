@@ -38,6 +38,7 @@ var game;
                     this.showUI(this.messagePanel, false, 0, 0, 1);
                     //连接服务器
                     this.connectServer();
+                    this.messagePanel.textInput.setFocus();
                     break;
                 case PanelNotify.CLOSE_MESSAGE:
                     this.closePanel(1);
@@ -49,6 +50,9 @@ var game;
                     break;
                 case ChartNotify.RECEIVE_CHART_MESSAGE:
                     //接收到消息
+                    if (data == "") {
+                        return;
+                    }
                     var jsonObject = JSON.parse(data);
                     //var jsonObject2 = eval('(' + data + ')');
                     this.showMessageView(jsonObject, 1);
@@ -62,6 +66,12 @@ var game;
             //关闭按钮
             this.messagePanel.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCloseBtnTouch, this);
             this.messagePanel.sendInfoBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSendInfoBtnTouch, this);
+            //设置头像
+            this.messagePanel.headICon_1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.setHeadIconName1, this);
+            this.messagePanel.headICon_2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.setHeadIconName2, this);
+            this.messagePanel.headICon_3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.setHeadIconName3, this);
+            this.messagePanel.headICon_4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.setHeadIconName4, this);
+            this.messagePanel.headICon_5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.setHeadIconName5, this);
         };
         /*-----------------------------------------------------------------------------------------
                                                 按钮消息处理
@@ -76,6 +86,8 @@ var game;
         };
         //发送消息按钮
         p.onSendInfoBtnTouch = function (evt) {
+            //重新设置焦点
+            this.messagePanel.textInput.setFocus();
             var saidText = this.messagePanel.textInput.text;
             if (saidText == "") {
                 EffectUtils.showTips("不能发送空消息", 5, true);
@@ -85,12 +97,58 @@ var game;
             var playerName = this.messagePanel.nameInput.text || "游客";
             var dataJson = {
                 "playerName": playerName,
-                "headIconName": "head5_jpg",
+                "headIconName": this.messagePanel.currentHeadIConName,
                 "saidText": saidText,
                 "time": 0
             };
             //var data:chart.MessageData = new chart.MessageData(playerName, "", saidText, 0, 0)
             this.facade().sendNotification(ChartNotify.SEND_CHART_MESSAGE, dataJson);
+        };
+        //设置头像
+        p.setHeadIconName1 = function (evt) {
+            this.messagePanel.currentHeadIConName = "head1_jpg";
+            if (!this.messagePanel.selectImage) {
+                this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
+                this.messagePanel.addChild(this.messagePanel.selectImage);
+            }
+            this.messagePanel.selectImage.x = this.messagePanel.headICon_1.x;
+            this.messagePanel.selectImage.y = this.messagePanel.headICon_1.y;
+        };
+        p.setHeadIconName2 = function (evt) {
+            this.messagePanel.currentHeadIConName = "head2_jpg";
+            if (!this.messagePanel.selectImage) {
+                this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
+                this.messagePanel.addChild(this.messagePanel.selectImage);
+            }
+            this.messagePanel.selectImage.x = this.messagePanel.headICon_2.x;
+            this.messagePanel.selectImage.y = this.messagePanel.headICon_2.y;
+        };
+        p.setHeadIconName3 = function (evt) {
+            this.messagePanel.currentHeadIConName = "head3_jpg";
+            if (!this.messagePanel.selectImage) {
+                this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
+                this.messagePanel.addChild(this.messagePanel.selectImage);
+            }
+            this.messagePanel.selectImage.x = this.messagePanel.headICon_3.x;
+            this.messagePanel.selectImage.y = this.messagePanel.headICon_3.y;
+        };
+        p.setHeadIconName4 = function (evt) {
+            this.messagePanel.currentHeadIConName = "head4_jpg";
+            if (!this.messagePanel.selectImage) {
+                this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
+                this.messagePanel.addChild(this.messagePanel.selectImage);
+            }
+            this.messagePanel.selectImage.x = this.messagePanel.headICon_4.x;
+            this.messagePanel.selectImage.y = this.messagePanel.headICon_4.y;
+        };
+        p.setHeadIconName5 = function (evt) {
+            this.messagePanel.currentHeadIConName = "head5_jpg";
+            if (!this.messagePanel.selectImage) {
+                this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
+                this.messagePanel.addChild(this.messagePanel.selectImage);
+            }
+            this.messagePanel.selectImage.x = this.messagePanel.headICon_5.x;
+            this.messagePanel.selectImage.y = this.messagePanel.headICon_5.y;
         };
         p.showMessageView = function (data, showtType) {
             var playerName = data.playerName;
