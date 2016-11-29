@@ -17,8 +17,7 @@ class Application(tornado.web.Application):
     def __init__(self):
         # URL映射
         handlers = [
-            (r"/", MainHandler),
-            (r"/chartsocket", ChatSocketHandeler)
+            (r"/", ChatSocketHandeler)
         ]
 
         # 初始参数设置
@@ -35,11 +34,20 @@ class Application(tornado.web.Application):
 
 # 聊天请求
 class ChatSocketHandeler(tornado.websocket.WebSocketHandler):
+    # 不加这个会报错
+    def check_origin(self, origin):
+        return True
+
+    # 客户端ID
+    client_id = 1
+
     # 保存所有在线WebSocket连接
     waiters = set()
 
     # WebSocket建立时调用
     def open(self):
+        self.client_id = ChatSocketHandeler.client_id
+        ChatSocketHandeler.client_id += 1
         ChatSocketHandeler.waiters.add(self)
 
     # WebSocket断开后调用
@@ -48,35 +56,20 @@ class ChatSocketHandeler(tornado.websocket.WebSocketHandler):
 
     # 收到WebSocket消息后调用
     def on_message(self, message):
-        logging.info("got message %r", message)
-        parsed = tornado.escape.json_decode(message)
-        self.username = parsed["username"]
-        chat = {
-            "id": str(uuid.uuid4()),
-            "body": parsed["body"],
-            "type": "message",
-        }
-
-        chat["html"] = tornado.escape.to_basestring(self.render_string("message.html", message=chat))
-
-        ChatSocketHandeler.send_updates(chat)
-
-    # 向所有客户端发送聊天消息
-    def send_updates(self, cls, chat):
-        logging.info("sending message to %d waiters", len(cls.waiters))
+        # logging.info("got message %r", message)
+        ChatSocketHandeler.send_updates(self.client_id, message)
+        
+    @classmethod
+    def send_updates(cls, id, message):  # 向所有客户端发送聊天消息
+        # logging.info("sending message to %d waiters", len(cls.waiters))
         for waiter in cls.waiters:
             try:
-                waiter.write_message(chat)
+                if waiter.client_id == id:
+                    waiter.write_message("")
+                else:
+                    waiter.write_message(message)
             except:
                 logging.error("Error sending message", exc_info=True)
-
-
-# 主页处理
-class MainHandler(tornado.web.RequestHandler):
-    # GET 相应函数
-    def get(self):
-        # 渲染模板
-        self.render("index.html")
 
 
 def main():
