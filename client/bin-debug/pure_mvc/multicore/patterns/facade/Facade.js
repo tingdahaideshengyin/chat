@@ -6,6 +6,9 @@
 //IProxy
 //IMediator
 //INotification
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 //Controller
 //Model
 //View
@@ -27,83 +30,82 @@ var puremvc;
             Facade.instanceMap[key] = this;
             this.initializeFacade();
         }
-        var d = __define,c=Facade,p=c.prototype;
-        p.initializeFacade = function () {
+        Facade.prototype.initializeFacade = function () {
             this.initializeModel();
             this.initializeController();
             this.initializeView();
         };
-        p.initializeModel = function () {
+        Facade.prototype.initializeModel = function () {
             if (!this.model) {
                 this.model = puremvc.Model.getInstance(this.multitonKey);
             }
         };
-        p.initializeController = function () {
+        Facade.prototype.initializeController = function () {
             if (!this.controller) {
                 this.controller = puremvc.Controller.getInstance(this.multitonKey);
             }
         };
-        p.initializeView = function () {
+        Facade.prototype.initializeView = function () {
             if (!this.view) {
                 this.view = puremvc.View.getInstance(this.multitonKey);
             }
         };
-        p.registerCommand = function (notificationName, commandClassRes) {
+        Facade.prototype.registerCommand = function (notificationName, commandClassRes) {
             //notificationName = AppFacade.STARTUP
             //commandClassRes = StartupCommand
             this.controller.registerCommand(notificationName, commandClassRes);
         };
-        p.removeCommand = function (notificationName) {
+        Facade.prototype.removeCommand = function (notificationName) {
             this.controller.removeCommand(notificationName);
         };
-        p.hasCommand = function (notificationName) {
+        Facade.prototype.hasCommand = function (notificationName) {
             return this.controller.hasCommand(notificationName);
         };
-        p.registerProxy = function (proxy) {
+        Facade.prototype.registerProxy = function (proxy) {
             this.model.registerProxy(proxy);
         };
-        p.retrieveProxy = function (proxyName) {
+        Facade.prototype.retrieveProxy = function (proxyName) {
             return this.model.retrieveProxy(proxyName);
         };
-        p.removeProxy = function (proxyName) {
+        Facade.prototype.removeProxy = function (proxyName) {
             var proxy;
             if (this.model) {
                 proxy = this.model.removeProxy(proxyName);
             }
             return proxy;
         };
-        p.hasProxy = function (proxyName) {
+        Facade.prototype.hasProxy = function (proxyName) {
             return this.model.hasProxy(proxyName);
         };
-        p.registerMediator = function (mediator) {
+        Facade.prototype.registerMediator = function (mediator) {
             if (this.view) {
                 this.view.registerMediator(mediator);
             }
         };
-        p.retrieveMediator = function (mediatorName) {
+        Facade.prototype.retrieveMediator = function (mediatorName) {
             return this.view.retrieveMediator(mediatorName);
         };
-        p.removeMediator = function (mediatorName) {
+        Facade.prototype.removeMediator = function (mediatorName) {
             var mediator;
             if (this.view) {
                 mediator = this.view.removeMediator(mediatorName);
             }
             return mediator;
         };
-        p.hasMediator = function (mediatorName) {
+        Facade.prototype.hasMediator = function (mediatorName) {
             return this.view.hasMediator(mediatorName);
         };
-        p.notifyObservers = function (notification) {
+        Facade.prototype.notifyObservers = function (notification) {
             if (this.view) {
                 this.view.notifyObservers(notification);
             }
         };
-        p.sendNotification = function (name, body, type) {
+        Facade.prototype.sendNotification = function (name, body, type) {
             //name = AppFacade.STARTUP
             //body = GameLayerManager.gameLayer()
             this.notifyObservers(new puremvc.Notification(name, body, type));
         };
-        p.initializeNotifier = function (key) {
+        Facade.prototype.initializeNotifier = function (key) {
             this.multitonKey = key;
         };
         Facade.getInstance = function (key) {
@@ -124,11 +126,11 @@ var puremvc;
             puremvc.Controller.removeController(key);
             delete Facade.instanceMap[key];
         };
-        Facade.instanceMap = {};
-        Facade.MULTITON_MSG = "Facade instance for this multiton key already constructed !";
         return Facade;
     }());
+    Facade.instanceMap = {};
+    Facade.MULTITON_MSG = "Facade instance for this multiton key already constructed !";
     puremvc.Facade = Facade;
-    egret.registerClass(Facade,'puremvc.Facade',["puremvc.IFacade","puremvc.INotifier"]);
+    __reflect(Facade.prototype, "puremvc.Facade", ["puremvc.IFacade", "puremvc.INotifier"]);
 })(puremvc || (puremvc = {}));
 //# sourceMappingURL=Facade.js.map

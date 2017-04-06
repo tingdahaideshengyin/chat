@@ -2,24 +2,32 @@
 //ICommand
 //INotifier
 //INotification
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 //Notifier
 var puremvc;
 (function (puremvc) {
     var MacroCommand = (function (_super) {
         __extends(MacroCommand, _super);
         function MacroCommand() {
-            _super.call(this);
-            this.subCommands = null;
-            this.subCommands = new Array();
-            this.initializeMacroCommand();
+            var _this = _super.call(this) || this;
+            _this.subCommands = null;
+            _this.subCommands = new Array();
+            _this.initializeMacroCommand();
+            return _this;
         }
-        var d = __define,c=MacroCommand,p=c.prototype;
-        p.initializeMacroCommand = function () {
+        MacroCommand.prototype.initializeMacroCommand = function () {
         };
-        p.addSubCommand = function (commandClassRef) {
+        MacroCommand.prototype.addSubCommand = function (commandClassRef) {
             this.subCommands.push(commandClassRef);
         };
-        p.execute = function (notification) {
+        MacroCommand.prototype.execute = function (notification) {
             //notification = new Notification(AppFacade.STARTUP, GameLayerManager.gameLayer())
             var subCommands = this.subCommands.slice(0);
             var length = this.subCommands.length;
@@ -34,6 +42,6 @@ var puremvc;
         return MacroCommand;
     }(puremvc.Notifier));
     puremvc.MacroCommand = MacroCommand;
-    egret.registerClass(MacroCommand,'puremvc.MacroCommand',["puremvc.ICommand","puremvc.INotifier"]);
+    __reflect(MacroCommand.prototype, "puremvc.MacroCommand", ["puremvc.ICommand"]);
 })(puremvc || (puremvc = {}));
 //# sourceMappingURL=MacroCommand.js.map

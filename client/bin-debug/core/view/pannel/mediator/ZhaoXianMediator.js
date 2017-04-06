@@ -1,3 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 //代码已经完整
 var game;
 (function (game) {
@@ -5,19 +13,19 @@ var game;
         __extends(ZhaoXianMediator, _super);
         function ZhaoXianMediator(viewComponet) {
             if (viewComponet === void 0) { viewComponet = null; }
-            _super.call(this, ZhaoXianMediator.NAME, viewComponet);
+            var _this = _super.call(this, ZhaoXianMediator.NAME, viewComponet) || this;
             //重写消息处理
-            this.zhaoXian = new game.ZhaoXian();
+            _this.zhaoXian = new game.ZhaoXian();
+            return _this;
         }
-        var d = __define,c=ZhaoXianMediator,p=c.prototype;
         //重写消息列表
-        p.listNotificationInterests = function () {
+        ZhaoXianMediator.prototype.listNotificationInterests = function () {
             return [
                 PanelNotify.OPEN_ZHAOXIAN,
                 PanelNotify.CLOSE_ZHAOXIAN
             ];
         };
-        p.handleNotification = function (notification) {
+        ZhaoXianMediator.prototype.handleNotification = function (notification) {
             var data = notification.getBody();
             switch (notification.getName()) {
                 case PanelNotify.OPEN_ZHAOXIAN:
@@ -32,7 +40,7 @@ var game;
         /*-----------------------------------------------------------------------------------------
                                                 初始化UI
         -----------------------------------------------------------------------------------------*/
-        p.initUI = function () {
+        ZhaoXianMediator.prototype.initUI = function () {
             //关闭按钮
             this.zhaoXian.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCloseBtnTouch, this);
             this.menuBtn = new ImageButton(this, "yellowBtn_png", this.onMenuBtnTouch, "按钮特效1", 30, 1, null);
@@ -49,45 +57,48 @@ var game;
             this.zhaoXian.addChild(this.buttonBtn);
             this.initEffect();
         };
-        p.initEffect = function () {
-            var effect1 = function () {
-                egret.Tween.get(this.menuBtn).to({ x: (this.w / 2 - this.menuBtn.width / 2) }, 600, egret.Ease.backOut);
-            };
-            egret.setTimeout(effect1, this, 150 * 1);
-            var effect2 = function () {
-                egret.Tween.get(this.setBtn).to({ x: (this.w / 2 - this.menuBtn.width / 2) }, 600, egret.Ease.backOut);
-            };
-            egret.setTimeout(effect2, this, 150 * 2);
-            var effect3 = function () {
-                egret.Tween.get(this.buttonBtn).to({ x: (this.w / 2 - this.menuBtn.width / 2) }, 600, egret.Ease.backOut);
-            };
-            egret.setTimeout(effect3, this, 150 * 3);
+        ZhaoXianMediator.prototype.initEffect = function () {
+            //var effect1:Function = function(){
+            //egret.Tween.get(this.menuBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
+            //};
+            //egret.setTimeout(effect1, this, 150*1);
+            egret.setTimeout(function () { egret.Tween.get(this.menuBtn).to({ x: (this.w / 2 - this.menuBtn.width / 2) }, 600, egret.Ease.backOut); }, this, 150 * 1);
+            //var effect2:Function = function(){
+            //egret.Tween.get(this.setBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
+            //};
+            //egret.setTimeout(effect2, this, 150*2);
+            egret.setTimeout(function () { egret.Tween.get(this.setBtn).to({ x: (this.w / 2 - this.menuBtn.width / 2) }, 600, egret.Ease.backOut); }, this, 150 * 2);
+            //var effect3:Function = function(){
+            //egret.Tween.get(this.buttonBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
+            //};
+            //egret.setTimeout(effect3, this, 150*3);
+            egret.setTimeout(function () { egret.Tween.get(this.buttonBtn).to({ x: (this.w / 2 - this.menuBtn.width / 2) }, 600, egret.Ease.backOut); }, this, 150 * 3);
         };
         /*-----------------------------------------------------------------------------------------
                                                 按钮消息处理
         -----------------------------------------------------------------------------------------*/
         //关闭按钮
-        p.onCloseBtnTouch = function (evt) {
+        ZhaoXianMediator.prototype.onCloseBtnTouch = function (evt) {
             this.closePanel(1);
             //下面的方法也可行，但是发送消息，多用于不同对象(class)之间的通信
             //如果是相同对象，直接调用本对象方法更容易
             //this.facade().sendNotification(PanelNotify.CLOSE_MAP);
         };
-        p.onMenuBtnTouch = function (evt) {
+        ZhaoXianMediator.prototype.onMenuBtnTouch = function (evt) {
         };
-        p.onSetBtnTouch = function (evt) {
+        ZhaoXianMediator.prototype.onSetBtnTouch = function (evt) {
         };
-        p.onButtonBtnTouch = function (evt) {
+        ZhaoXianMediator.prototype.onButtonBtnTouch = function (evt) {
         };
         /*-----------------------------------------------------------------------------------------
                                                 初始化界面数据
         -----------------------------------------------------------------------------------------*/
-        p.ininData = function () {
+        ZhaoXianMediator.prototype.ininData = function () {
         };
-        ZhaoXianMediator.NAME = "ZhaoXianMediator";
         return ZhaoXianMediator;
     }(BaseMediator));
+    ZhaoXianMediator.NAME = "ZhaoXianMediator";
     game.ZhaoXianMediator = ZhaoXianMediator;
-    egret.registerClass(ZhaoXianMediator,'game.ZhaoXianMediator');
+    __reflect(ZhaoXianMediator.prototype, "game.ZhaoXianMediator");
 })(game || (game = {}));
 //# sourceMappingURL=ZhaoXianMediator.js.map

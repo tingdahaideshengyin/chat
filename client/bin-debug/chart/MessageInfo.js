@@ -1,3 +1,6 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var chart;
 (function (chart) {
     var MessageInfo = (function () {
@@ -12,27 +15,28 @@ var chart;
             this._data = new chart.MessageData(playerName, headIconName, saidText, type, time);
             this._view = new chart.MessageView(playerName, headIconName, saidText, type, time);
         }
-        var d = __define,c=MessageInfo,p=c.prototype;
         /*-----------------------------------------------------------------------------------------
                                                 初始化UI
         -----------------------------------------------------------------------------------------*/
         //设置数据
         //设置视图
         //显示名字
-        p.showName = function () {
+        MessageInfo.prototype.showName = function () {
         };
-        d(p, "view"
+        Object.defineProperty(MessageInfo.prototype, "view", {
             /*-----------------------------------------------------------------------------------------
                                                     公共方法
             -----------------------------------------------------------------------------------------*/
             /** 获取视图 */
-            ,function () {
+            get: function () {
                 return this._view;
-            }
-        );
+            },
+            enumerable: true,
+            configurable: true
+        });
         return MessageInfo;
     }());
     chart.MessageInfo = MessageInfo;
-    egret.registerClass(MessageInfo,'chart.MessageInfo');
+    __reflect(MessageInfo.prototype, "chart.MessageInfo");
 })(chart || (chart = {}));
 //# sourceMappingURL=MessageInfo.js.map

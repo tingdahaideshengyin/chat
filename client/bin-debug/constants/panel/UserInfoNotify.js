@@ -1,3 +1,6 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 /**
 * 用户信息
 * by dily
@@ -7,10 +10,9 @@
 var UserInfoNotify = (function () {
     function UserInfoNotify() {
     }
-    var d = __define,c=UserInfoNotify,p=c.prototype;
-    //打开角色
-    UserInfoNotify.UPDATE_DATA = "UPDATE_DATA";
     return UserInfoNotify;
 }());
-egret.registerClass(UserInfoNotify,'UserInfoNotify');
+//打开角色
+UserInfoNotify.UPDATE_DATA = "UPDATE_DATA";
+__reflect(UserInfoNotify.prototype, "UserInfoNotify");
 //# sourceMappingURL=UserInfoNotify.js.map

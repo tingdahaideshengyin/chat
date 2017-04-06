@@ -1,3 +1,6 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var chart;
 (function (chart) {
     var MessageData = (function () {
@@ -25,63 +28,72 @@ var chart;
             this._type = type;
             this._time = time;
         }
-        var d = __define,c=MessageData,p=c.prototype;
-        d(p, "playerName"
+        Object.defineProperty(MessageData.prototype, "playerName", {
             /*-----------------------------------------------------------------------------------------
                                                     对外API
             -----------------------------------------------------------------------------------------*/
             /** 获取玩家名字 */
-            ,function () {
+            get: function () {
                 return this._playerName;
-            }
+            },
             /** 设置玩家名字 */
-            ,function (playerName) {
+            set: function (playerName) {
                 this._playerName = playerName;
-            }
-        );
-        d(p, "playerHeadIconName"
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(MessageData.prototype, "playerHeadIconName", {
             /** 获取玩家头像资源名字 */
-            ,function () {
+            get: function () {
                 return this._playerHeadIconName;
-            }
+            },
             /** 设置玩家头像资源名字 */
-            ,function (headIconName) {
+            set: function (headIconName) {
                 this._playerHeadIconName = headIconName;
-            }
-        );
-        d(p, "playerSaidText"
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(MessageData.prototype, "playerSaidText", {
             /** 获取玩家消息内容 */
-            ,function () {
+            get: function () {
                 return this._playerSaidText;
-            }
+            },
             /** 设置玩家消息内容 */
-            ,function (saidText) {
+            set: function (saidText) {
                 this._playerSaidText = saidText;
-            }
-        );
-        d(p, "type"
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(MessageData.prototype, "type", {
             /** 获取玩家消息类型 */
-            ,function () {
+            get: function () {
                 return this._type;
-            }
+            },
             /** 设置玩家消息类型 */
-            ,function (type) {
+            set: function (type) {
                 this._type = type;
-            }
-        );
-        d(p, "time"
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(MessageData.prototype, "time", {
             /** 获取玩家消息时间 */
-            ,function () {
+            get: function () {
                 return this._time;
-            }
+            },
             /** 获取玩家消息时间 */
-            ,function (time) {
+            set: function (time) {
                 this._time = time;
-            }
-        );
+            },
+            enumerable: true,
+            configurable: true
+        });
         return MessageData;
     }());
     chart.MessageData = MessageData;
-    egret.registerClass(MessageData,'chart.MessageData');
+    __reflect(MessageData.prototype, "chart.MessageData");
 })(chart || (chart = {}));
 //# sourceMappingURL=MessageData.js.map

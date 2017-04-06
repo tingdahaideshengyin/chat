@@ -98,13 +98,19 @@ class ImageButton extends egret.DisplayObjectContainer{
 		};
 		egret.Tween.get(this).to({scaleX:0.5, scaleY:0.5, x:(this.x + this.btnImage.width/4), y:(this.y + this.btnImage.height/4)}, 100, egret.Ease.sineIn).call(onComplete1, this);
 
-		var callBackFun:Function = function(){
+		
+		//var callBackFun:Function = function(){
+			//if(this.backFun != null){
+				//this.backFun.apply(this.param.context, [this.param.data]);
+			//}
+		//}
+		//egret.setTimeout(callBackFun, this, 300);
+
+		egret.setTimeout(function(){
 			if(this.backFun != null){
 				this.backFun.apply(this.param.context, [this.param.data]);
 			}
-		}
-
-		egret.setTimeout(callBackFun, this, 300);
+		}, this, 300)
 	}
 
 

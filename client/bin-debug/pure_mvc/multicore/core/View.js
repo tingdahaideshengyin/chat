@@ -3,6 +3,9 @@
 //IObserver
 //IMediator
 //INotification
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var puremvc;
 (function (puremvc) {
     var View = (function () {
@@ -34,10 +37,9 @@ var puremvc;
             this.observerMap = {};
             this.initializeView();
         }
-        var d = __define,c=View,p=c.prototype;
-        p.initializeView = function () {
+        View.prototype.initializeView = function () {
         };
-        p.registerObserver = function (notificationName, observer) {
+        View.prototype.registerObserver = function (notificationName, observer) {
             //notificationName = AppFacade.STARTUP
             //observer = new Observer(Controller.executeCommand,Controller)
             var obervers = this.observerMap[notificationName];
@@ -48,7 +50,7 @@ var puremvc;
                 this.observerMap[notificationName] = [observer];
             }
         };
-        p.removeObserver = function (notificationName, notifyContext) {
+        View.prototype.removeObserver = function (notificationName, notifyContext) {
             var observers = this.observerMap[notificationName];
             var i = observers.length;
             while (i--) {
@@ -62,7 +64,7 @@ var puremvc;
                 delete this.observerMap[notificationName];
             }
         };
-        p.notifyObservers = function (notification) {
+        View.prototype.notifyObservers = function (notification) {
             var notificationName = notification.getName();
             var observersRef = this.observerMap[notificationName];
             //notificationName = AppFacade.STARTUP
@@ -76,7 +78,7 @@ var puremvc;
                 }
             }
         };
-        p.registerMediator = function (mediator) {
+        View.prototype.registerMediator = function (mediator) {
             var name = mediator.getMediatorName();
             if (this.mediatorMap[name]) {
                 return;
@@ -93,10 +95,10 @@ var puremvc;
             }
             mediator.onRegister();
         };
-        p.retrieveMediator = function (mediatorName) {
+        View.prototype.retrieveMediator = function (mediatorName) {
             return this.mediatorMap[mediatorName] || null;
         };
-        p.removeMediator = function (mediatorNmae) {
+        View.prototype.removeMediator = function (mediatorNmae) {
             var mediator = this.mediatorMap[mediatorNmae];
             if (mediator) {
                 return null;
@@ -110,7 +112,7 @@ var puremvc;
             mediator.onRemove();
             return mediator;
         };
-        p.hasMediator = function (mediatorName) {
+        View.prototype.hasMediator = function (mediatorName) {
             return this.mediatorMap[mediatorName] != null;
         };
         View.getInstance = function (key) {
@@ -122,11 +124,11 @@ var puremvc;
         View.removeView = function (key) {
             delete View.instanceMap[key];
         };
-        View.instanceMap = {};
-        View.MULTITON_MSG = "View instance for this multiton key already constructed !";
         return View;
     }());
+    View.instanceMap = {};
+    View.MULTITON_MSG = "View instance for this multiton key already constructed !";
     puremvc.View = View;
-    egret.registerClass(View,'puremvc.View',["puremvc.IView"]);
+    __reflect(View.prototype, "puremvc.View", ["puremvc.IView"]);
 })(puremvc || (puremvc = {}));
 //# sourceMappingURL=View.js.map

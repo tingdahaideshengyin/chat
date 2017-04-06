@@ -3,6 +3,9 @@
 //IView
 //INotification
 //ICommand
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 //Observer
 //View
 var puremvc;
@@ -20,11 +23,10 @@ var puremvc;
             this.commandMap = {};
             this.initializeController();
         }
-        var d = __define,c=Controller,p=c.prototype;
-        p.initializeController = function () {
+        Controller.prototype.initializeController = function () {
             this.view = puremvc.View.getInstance(this.multitonKey);
         };
-        p.executeCommand = function (notification) {
+        Controller.prototype.executeCommand = function (notification) {
             var commandClassRef = this.commandMap[notification.getName()];
             //notification = new Notification(AppFacade.STARTUP, GameLayerManager.gameLayer())
             //commandClassRef = game.StartupCommand
@@ -34,7 +36,7 @@ var puremvc;
                 command.execute(notification);
             }
         };
-        p.registerCommand = function (notificationName, commandCkassRef) {
+        Controller.prototype.registerCommand = function (notificationName, commandCkassRef) {
             //notificationName = AppFacade.STARTUP
             //commandCkassRef = game.StartupCommand
             if (!this.commandMap[notificationName]) {
@@ -42,10 +44,10 @@ var puremvc;
                 this.commandMap[notificationName] = commandCkassRef;
             }
         };
-        p.hasCommand = function (notificationName) {
+        Controller.prototype.hasCommand = function (notificationName) {
             return this.commandMap[notificationName] != null;
         };
-        p.removeCommand = function (notificationName) {
+        Controller.prototype.removeCommand = function (notificationName) {
             if (this.hasCommand(notificationName)) {
                 this.view.removeObserver(notificationName, this);
                 delete this.commandMap[notificationName];
@@ -60,11 +62,11 @@ var puremvc;
         Controller.removeController = function (key) {
             delete Controller.instanceMap[key];
         };
-        Controller.instanceMap = {}; //多核版本
-        Controller.MULTITON_MSG = "Controller instance for this multiton key already constructed !";
         return Controller;
     }());
+    Controller.instanceMap = {}; //多核版本
+    Controller.MULTITON_MSG = "Controller instance for this multiton key already constructed !";
     puremvc.Controller = Controller;
-    egret.registerClass(Controller,'puremvc.Controller',["puremvc.IController"]);
+    __reflect(Controller.prototype, "puremvc.Controller", ["puremvc.IController"]);
 })(puremvc || (puremvc = {}));
 //# sourceMappingURL=Controller.js.map

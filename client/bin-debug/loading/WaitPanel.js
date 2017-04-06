@@ -1,3 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /**
   * 通讯等待类
   * by dily
@@ -9,14 +17,14 @@ var WaitPanel = (function (_super) {
     __extends(WaitPanel, _super);
     function WaitPanel(type) {
         if (type === void 0) { type = 1; }
-        _super.call(this);
-        this.bg = new egret.Sprite();
-        this.w = 0;
-        this.h = 0;
-        this.createView();
+        var _this = _super.call(this) || this;
+        _this.bg = new egret.Sprite();
+        _this.w = 0;
+        _this.h = 0;
+        _this.createView();
+        return _this;
     }
-    var d = __define,c=WaitPanel,p=c.prototype;
-    p.createView = function () {
+    WaitPanel.prototype.createView = function () {
         this.w = egret.MainContext.instance.stage.stageWidth;
         this.h = egret.MainContext.instance.stage.stageHeight;
         this.bg.graphics.beginFill(0x000000, 0.2);
@@ -37,5 +45,5 @@ var WaitPanel = (function (_super) {
     };
     return WaitPanel;
 }(egret.Sprite));
-egret.registerClass(WaitPanel,'WaitPanel');
+__reflect(WaitPanel.prototype, "WaitPanel");
 //# sourceMappingURL=WaitPanel.js.map

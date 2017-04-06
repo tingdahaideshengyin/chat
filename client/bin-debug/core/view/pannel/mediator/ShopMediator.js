@@ -1,32 +1,40 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var game;
 (function (game) {
     var ShopMediator = (function (_super) {
         __extends(ShopMediator, _super);
         function ShopMediator(viewComponet) {
             if (viewComponet === void 0) { viewComponet = null; }
-            _super.call(this, ShopMediator.NAME, viewComponet);
+            var _this = _super.call(this, ShopMediator.NAME, viewComponet) || this;
             //消息处理
-            this.shopPanel = new game.ShopPanel();
-            this.isPLay0 = false;
-            this.isPLay1 = false;
-            this.isPLay2 = false;
-            this.isPLay3 = false;
-            this.isPLay4 = false;
-            this.isPLay5 = false;
-            this.isPLay6 = false;
-            this.isPLay7 = false;
-            this.isPLay8 = false;
-            this.isPLay9 = false;
+            _this.shopPanel = new game.ShopPanel();
+            _this.isPLay0 = false;
+            _this.isPLay1 = false;
+            _this.isPLay2 = false;
+            _this.isPLay3 = false;
+            _this.isPLay4 = false;
+            _this.isPLay5 = false;
+            _this.isPLay6 = false;
+            _this.isPLay7 = false;
+            _this.isPLay8 = false;
+            _this.isPLay9 = false;
+            return _this;
         }
-        var d = __define,c=ShopMediator,p=c.prototype;
         //重新消息列表
-        p.listNotificationInterests = function () {
+        ShopMediator.prototype.listNotificationInterests = function () {
             return [
                 PanelNotify.OPEN_SHOP,
                 PanelNotify.CLOSE_SHOP
             ];
         };
-        p.handleNotification = function (notification) {
+        ShopMediator.prototype.handleNotification = function (notification) {
             var data = notification.getBody();
             switch (notification.getName()) {
                 case PanelNotify.OPEN_SHOP:
@@ -41,7 +49,7 @@ var game;
         /*-----------------------------------------------------------------------------------------
                                                 初始化UI
         -----------------------------------------------------------------------------------------*/
-        p.initUI = function () {
+        ShopMediator.prototype.initUI = function () {
             //关闭按钮
             this.shopPanel.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCloseBtnTouch, this);
             //其他按钮
@@ -60,14 +68,14 @@ var game;
                                                 按钮消息处理
         -----------------------------------------------------------------------------------------*/
         //关闭按钮
-        p.onCloseBtnTouch = function (evt) {
+        ShopMediator.prototype.onCloseBtnTouch = function (evt) {
             this.closePanel(1);
             //下面的方法也可行，但是发送消息，多用于不同对象(class)之间的通信
             //如果是相同对象，直接调用本对象方法更容易
             //this.facade().sendNotification(PanelNotify.CLOSE_MAP);
         };
         //按钮特效
-        p.onBtn0Touch = function (evt) {
+        ShopMediator.prototype.onBtn0Touch = function (evt) {
             if (!this.isPLay0) {
                 EffectUtils.showTips("旋转特效", 5);
                 EffectUtils.rotationEffect(this.shopPanel.img0, 1000);
@@ -79,7 +87,7 @@ var game;
                 this.isPLay0 = false;
             }
         };
-        p.onBtn1Touch = function (evt) {
+        ShopMediator.prototype.onBtn1Touch = function (evt) {
             if (!this.isPLay0) {
                 EffectUtils.showTips("中心旋转特效", 5);
                 EffectUtils.rotationEffect(this.shopPanel.img1, 1000);
@@ -91,27 +99,27 @@ var game;
                 this.isPLay0 = false;
             }
         };
-        p.onBtn2Touch = function (evt) {
+        ShopMediator.prototype.onBtn2Touch = function (evt) {
             EffectUtils.showTips("闪烁特效", 5);
             EffectUtils.blinkEffect(this.shopPanel.img2, 1000);
         };
-        p.onBtn3Touch = function (evt) {
+        ShopMediator.prototype.onBtn3Touch = function (evt) {
             EffectUtils.showTips("抖动特效", 5);
             EffectUtils.shakeObj(this.shopPanel.img3);
         };
-        p.onBtn4Touch = function (evt) {
+        ShopMediator.prototype.onBtn4Touch = function (evt) {
             EffectUtils.showTips("按下弹大", 5);
             EffectUtils.playEffect(this.shopPanel.img4, 1);
         };
-        p.onBtn5Touch = function (evt) {
+        ShopMediator.prototype.onBtn5Touch = function (evt) {
             EffectUtils.showTips("按下轻微弹大", 5);
             EffectUtils.playEffect(this.shopPanel.img5, 2);
         };
-        p.onBtn6Touch = function (evt) {
+        ShopMediator.prototype.onBtn6Touch = function (evt) {
             EffectUtils.showTips("按下变小，放开变大", 5);
             EffectUtils.playEffect(this.shopPanel.img6, 3);
         };
-        p.onBtn7Touch = function (evt) {
+        ShopMediator.prototype.onBtn7Touch = function (evt) {
             if (!this.isPLay7) {
                 this.isPLay7 = true;
                 EffectUtils.showTips("持续变大变小", 5);
@@ -121,7 +129,7 @@ var game;
                 EffectUtils.showTips("正在持续变大变小", 5);
             }
         };
-        p.onBtn8Touch = function (evt) {
+        ShopMediator.prototype.onBtn8Touch = function (evt) {
             if (!this.isPLay8) {
                 this.isPLay8 = true;
                 EffectUtils.showTips("上下浮动", 5);
@@ -131,7 +139,7 @@ var game;
                 EffectUtils.showTips("正在上下浮动", 5);
             }
         };
-        p.onBtn9Touch = function (evt) {
+        ShopMediator.prototype.onBtn9Touch = function (evt) {
             if (!this.isPLay9) {
                 this.isPLay9 = true;
                 EffectUtils.showTips("摇头特效", 5);
@@ -144,12 +152,12 @@ var game;
         /*-----------------------------------------------------------------------------------------
                                                 初始化界面数据
         -----------------------------------------------------------------------------------------*/
-        p.ininData = function () {
+        ShopMediator.prototype.ininData = function () {
         };
-        ShopMediator.NAME = "ShopMediator";
         return ShopMediator;
     }(BaseMediator));
+    ShopMediator.NAME = "ShopMediator";
     game.ShopMediator = ShopMediator;
-    egret.registerClass(ShopMediator,'game.ShopMediator');
+    __reflect(ShopMediator.prototype, "game.ShopMediator");
 })(game || (game = {}));
 //# sourceMappingURL=ShopMediator.js.map

@@ -1,6 +1,9 @@
 //已完整
 //IModel
 //IProxy
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 //Model保持对Proxy对象的引用，Proxy负责操作数据模型，与远程服务通信存储数据
 //这样保证了Moldel层的可移植性
 var puremvc;
@@ -27,7 +30,6 @@ var puremvc;
             this.proxyMap = {};
             this.initializeModel();
         }
-        var d = __define,c=Model,p=c.prototype;
         /**
          * Initialize the mutiton <code>Model</code> instance.
          *
@@ -36,7 +38,7 @@ var puremvc;
          *
          * @protected
          */
-        p.initializeModel = function () {
+        Model.prototype.initializeModel = function () {
         };
         /**
          * register an <code>IProxy</code> with the <code>Model</code>.
@@ -45,7 +47,7 @@ var puremvc;
          * 		An <code>IProxy</code> to be held by the <code>Model</code>.
          *
          */
-        p.registerProxy = function (proxy) {
+        Model.prototype.registerProxy = function (proxy) {
             proxy.initializeNotifier(this.multitonKey);
             this.proxyMap[proxy.getProxyName()] = proxy;
             proxy.onRegister();
@@ -61,7 +63,7 @@ var puremvc;
          * 		explicit <code>null</null> if the <code>IProxy</code> didn't exist.
          *
          */
-        p.removeProxy = function (proxyName) {
+        Model.prototype.removeProxy = function (proxyName) {
             var proxy = this.proxyMap[proxyName];
             if (proxy) {
                 delete this.proxyMap[proxyName];
@@ -80,7 +82,7 @@ var puremvc;
          * 		explicit <code>null</null> if the <code>IProxy</code> didn't exist.
          *
          */
-        p.retrieveProxy = function (proxyName) {
+        Model.prototype.retrieveProxy = function (proxyName) {
             return this.proxyMap[proxyName] || null;
         };
         /**
@@ -93,7 +95,7 @@ var puremvc;
          * 		A Proxy is currently registered with the given <code>proxyName</code>
          *
          */
-        p.hasProxy = function (proxyName) {
+        Model.prototype.hasProxy = function (proxyName) {
             return this.proxyMap[proxyName] != null;
         };
         Model.getInstance = function (key) {
@@ -105,16 +107,16 @@ var puremvc;
         Model.removeModel = function (key) {
             delete Model.instanceMap[key];
         };
-        /**
-         * <code>Model</code> singleton instance map;
-         *
-         * @protected
-         */
-        Model.instanceMap = {};
-        Model.MULTITON_MSG = "Modle instance for this multiton key already constructed";
         return Model;
     }());
+    /**
+     * <code>Model</code> singleton instance map;
+     *
+     * @protected
+     */
+    Model.instanceMap = {};
+    Model.MULTITON_MSG = "Modle instance for this multiton key already constructed";
     puremvc.Model = Model;
-    egret.registerClass(Model,'puremvc.Model',["puremvc.IModel"]);
+    __reflect(Model.prototype, "puremvc.Model", ["puremvc.IModel"]);
 })(puremvc || (puremvc = {}));
 //# sourceMappingURL=Model.js.map

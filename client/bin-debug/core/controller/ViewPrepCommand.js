@@ -2,17 +2,24 @@
 /**
  * 注册mediator
  */
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var game;
 (function (game) {
     var ViewPrepCommand = (function (_super) {
         __extends(ViewPrepCommand, _super);
         function ViewPrepCommand() {
-            _super.call(this);
+            return _super.call(this) || this;
             //多核版本，张鹏自己添加
             //this.initializeNotifier("mainGame");
         }
-        var d = __define,c=ViewPrepCommand,p=c.prototype;
-        p.execute = function (notificton) {
+        ViewPrepCommand.prototype.execute = function (notificton) {
             var main = GameLayerManager.gameLayer().panelLayer;
             //注册各种UI面板
             //注册天下UI
@@ -35,6 +42,6 @@ var game;
         return ViewPrepCommand;
     }(puremvc.SimpleCommand));
     game.ViewPrepCommand = ViewPrepCommand;
-    egret.registerClass(ViewPrepCommand,'game.ViewPrepCommand',["puremvc.ICommand","puremvc.INotifier"]);
+    __reflect(ViewPrepCommand.prototype, "game.ViewPrepCommand", ["puremvc.INotifier"]);
 })(game || (game = {}));
 //# sourceMappingURL=ViewPrepCommand.js.map

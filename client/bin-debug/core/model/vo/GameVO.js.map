@@ -1,1 +1,1 @@
-{"version":3,"file":"GameVO.js","sourceRoot":"","sources":["../../../../src/core/model/vo/GameVO.ts"],"names":[],"mappings":"AAAA,QAAQ;AACR;;GAEG;AAEH;IAAA;QACC,WAAW;QACJ,aAAQ,GAAU,UAAU,CAAC;IACrC,CAAC;;IAAD,aAAC;AAAD,CAAC,AAHD,IAGC;oBAHK,MAAM;AAGX"}
+{"version":3,"file":"GameVO.js","sourceRoot":"","sources":["../../../../src/core/model/vo/GameVO.ts"],"names":[],"mappings":"AAAA,QAAQ;AACR;;GAEG;;;;AAEH;IAAA;QACC,WAAW;QACJ,aAAQ,GAAU,UAAU,CAAC;IACrC,CAAC;IAAD,aAAC;AAAD,CAAC,AAHD,IAGC;AAHK,UAAA,MAAM,qBAGX,CAAA"}

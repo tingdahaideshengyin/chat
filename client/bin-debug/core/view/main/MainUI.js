@@ -1,3 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 //代码已完整
 /** 主界面 */
 var game;
@@ -5,24 +13,24 @@ var game;
     var MainUI = (function (_super) {
         __extends(MainUI, _super);
         function MainUI() {
-            _super.call(this);
+            var _this = _super.call(this) || this;
             /*-----------------------------------------------------------------------------------------
                                             主界面收缩按钮
             -----------------------------------------------------------------------------------------*/
             //主界面是否隐藏
-            this.isHide = false;
-            this.skinName = "resource/eui_skins_game/MainUISkin.exml";
+            _this.isHide = false;
+            _this.skinName = "resource/eui_skins_game/MainUISkin.exml";
             //this.addEventListener(eui.UIEvent.COMPLETE, this.createCompleteEvent, this);
-            this.createCompleteEvent();
+            _this.createCompleteEvent();
+            return _this;
         }
-        var d = __define,c=MainUI,p=c.prototype;
-        p.partAdded = function (partName, instance) {
+        MainUI.prototype.partAdded = function (partName, instance) {
             _super.prototype.partAdded.call(this, partName, instance);
         };
-        p.childrenCreated = function () {
+        MainUI.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
         };
-        p.createCompleteEvent = function () {
+        MainUI.prototype.createCompleteEvent = function () {
             //private createCompleteEvent(event:eui.UIEvent):void{
             //console.log(1);
             //this.removeEventListener(eui.UIEvent.COMPLETE,this.createCompleteEvent,this);
@@ -52,7 +60,7 @@ var game;
         /*-----------------------------------------------------------------------------------------
                                         导航条添加蒙版
         -----------------------------------------------------------------------------------------*/
-        p.addUIMask = function () {
+        MainUI.prototype.addUIMask = function () {
             //底部UI Mask
             //var bottomMask:egret.Rectangle = new egret.Rectangle();
             var bottomMask = new egret.Shape;
@@ -80,7 +88,7 @@ var game;
             this.functionBar.mask = rightMask;
             this.functionBarY = this.functionBar.y;
         };
-        p.onMainBtnTouch = function (evt) {
+        MainUI.prototype.onMainBtnTouch = function (evt) {
             if (this.isHide) {
                 this.isHide = false;
                 egret.Tween.get(this.activityBar).to({ x: this.activityBarX }, 300, egret.Ease.backInOut);
@@ -96,40 +104,40 @@ var game;
                                         各种主界面按钮事件
         -----------------------------------------------------------------------------------------*/
         //地图天下按钮点击事件
-        p.onMapBtnTouch = function (evt) {
+        MainUI.prototype.onMapBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_MAP);
         };
         //商店按钮点击事件
-        p.onShopBtnTouch = function (evt) {
+        MainUI.prototype.onShopBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_SHOP);
         };
         //闯荡按钮点击事件
-        p.onChuangDangBtnTouch = function (evt) {
+        MainUI.prototype.onChuangDangBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_CHUANGDANG);
         };
         //招贤按钮事件
-        p.onZhaoXianBtnTouch = function (evt) {
+        MainUI.prototype.onZhaoXianBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_ZHAOXIAN);
         };
         //强化按钮点击事件
-        p.onQiangHuaBtnTouch = function (evt) {
+        MainUI.prototype.onQiangHuaBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_QIANGHUA);
         };
         //背包按钮点击事件
-        p.onBackpackBtnTouch = function (evt) {
+        MainUI.prototype.onBackpackBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BACKPACK);
         };
         //角色按钮点击事件
-        p.onRoleBtnTouch = function (evt) {
+        MainUI.prototype.onRoleBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_ROLE);
         };
         //消息按钮点击事件
-        p.onInfoBtnTouch = function (evt) {
+        MainUI.prototype.onInfoBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_MESSAGE);
         };
         return MainUI;
     }(eui.Component));
     game.MainUI = MainUI;
-    egret.registerClass(MainUI,'game.MainUI',["eui.UIComponent"]);
+    __reflect(MainUI.prototype, "game.MainUI", ["eui.UIComponent", "egret.DisplayObject"]);
 })(game || (game = {}));
 //# sourceMappingURL=MainUI.js.map

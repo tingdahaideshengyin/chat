@@ -8,6 +8,8 @@
  */
 class KuaYuLoadImage extends egret.Bitmap
 {
+    
+    /** 报错，先暂时注释2017.4.6
     private _src:string=null;
     private _comp:boolean=false;
 
@@ -58,7 +60,7 @@ class KuaYuLoadImage extends egret.Bitmap
                 KuaYuLoadImage.$(this).onLoadBack(this, this.src);
             };
             img.onerror = function(){
-                KuaYuLoadImage.$(this).onLoadBack(this, this.src);
+               KuaYuLoadImage.$(this).onLoadBack(this, this.src);
             }
             img.src = url;
         }else{
@@ -75,6 +77,9 @@ class KuaYuLoadImage extends egret.Bitmap
         this.y=y;
     }
 
+     */
+
+
     /**
      * 异步加载图片
      * @param url   图片地址
@@ -82,6 +87,8 @@ class KuaYuLoadImage extends egret.Bitmap
      * @param thisObject
      * @returns {egret.Bitmap}
      */
+
+    /** 报错，先暂时注释2017.4.6
     public static loadAsync(url:string, compFunc:Function=null, thisObject:any=null):egret.Bitmap{
         var img:HTMLImageElement = new Image();
         var bmp:egret.Bitmap = new egret.Bitmap();
@@ -108,5 +115,5 @@ class KuaYuLoadImage extends egret.Bitmap
         img.src = url;
         return bmp;
     }
-
+    */
 }

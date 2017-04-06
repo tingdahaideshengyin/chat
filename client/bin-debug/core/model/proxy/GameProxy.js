@@ -1,3 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 //代码已经完整
 /** 游戏数据读取模板 */
 /**
@@ -8,26 +16,26 @@
 var GameProxy = (function (_super) {
     __extends(GameProxy, _super);
     function GameProxy() {
-        _super.call(this, GameProxy.NAME);
-        this.vo = new GameVO();
+        var _this = _super.call(this, GameProxy.NAME) || this;
+        _this.vo = new GameVO();
+        return _this;
     }
-    var d = __define,c=GameProxy,p=c.prototype;
     /** 读取游戏名称 */
-    p.getGameName = function () {
+    GameProxy.prototype.getGameName = function () {
         if (!this.vo) {
             this.vo = new GameVO();
         }
         return this.vo.gameName;
     };
     /** 设置游戏名称 */
-    p.setGameName = function (name) {
+    GameProxy.prototype.setGameName = function (name) {
         if (!this.vo) {
             this.vo = new GameVO();
         }
         this.vo.gameName = name;
     };
-    GameProxy.NAME = "GameProxy"; //必须和excel到处文件一致
     return GameProxy;
 }(ResourceProxyBase));
-egret.registerClass(GameProxy,'GameProxy');
+GameProxy.NAME = "GameProxy"; //必须和excel到处文件一致
+__reflect(GameProxy.prototype, "GameProxy");
 //# sourceMappingURL=GameProxy.js.map

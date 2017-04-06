@@ -60,11 +60,18 @@ module game {
 
 		//按钮Tips特效
 		private onOkBtnTouch(evt:egret.TouchEvent):void{
-			var reOpenPanel:Function = function(){
+			//var reOpenPanel:Function = function(){
+				//this.sendNotification(PanelNotify.OPEN_CHUANGDANG);
+				//this.facade().sendNotification(PanelNotify.OPEN_CHUANGDANG);//张鹏自己家的，2种方式均可关闭
+			//}
+			//egret.setTimeout(reOpenPanel, this, 100)
+
+			egret.setTimeout(function(){
 				this.sendNotification(PanelNotify.OPEN_CHUANGDANG);
-				//this.facade().sendNotification(PanelNotify.OPEN_CHUANGDANG);
-			}
-			egret.setTimeout(reOpenPanel, this, 100)
+				//this.facade().sendNotification(PanelNotify.OPEN_CHUANGDANG);//张鹏自己家的，2种方式均可关闭
+			}, this, 100)
+
+
 			this.closePanel(0);
 		}
 

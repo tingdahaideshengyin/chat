@@ -63,20 +63,23 @@ module game {
 		}
 
 		private initEffect():void{
-			var effect1:Function = function(){
-				egret.Tween.get(this.menuBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
-			};
-			egret.setTimeout(effect1, this, 150*1);
+			//var effect1:Function = function(){
+				//egret.Tween.get(this.menuBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
+			//};
+			//egret.setTimeout(effect1, this, 150*1);
+			egret.setTimeout(function(){egret.Tween.get(this.menuBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut)}, this, 150*1);
 
-			var effect2:Function = function(){
-				egret.Tween.get(this.setBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
-			};
-			egret.setTimeout(effect2, this, 150*2);
+			//var effect2:Function = function(){
+				//egret.Tween.get(this.setBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
+			//};
+			//egret.setTimeout(effect2, this, 150*2);
+			egret.setTimeout(function(){egret.Tween.get(this.setBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut)}, this, 150*2);
 
-			var effect3:Function = function(){
-				egret.Tween.get(this.buttonBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
-			};
-			egret.setTimeout(effect3, this, 150*3);
+			//var effect3:Function = function(){
+				//egret.Tween.get(this.buttonBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut);
+			//};
+			//egret.setTimeout(effect3, this, 150*3);
+			egret.setTimeout(function(){egret.Tween.get(this.buttonBtn).to({x:(this.w/2 - this.menuBtn.width/2)}, 600, egret.Ease.backOut)}, this, 150*3);
 		}
 
 

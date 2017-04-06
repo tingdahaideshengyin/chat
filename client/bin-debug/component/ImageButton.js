@@ -1,4 +1,12 @@
 //代码已经完整
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /**
  * 图片Button类
  * 可以有图片，文字，动画
@@ -21,17 +29,17 @@ var ImageButton = (function (_super) {
         if (fontSize === void 0) { fontSize = 30; }
         if (cartoonType === void 0) { cartoonType = 1; }
         if (assetsName === void 0) { assetsName = "assets"; }
-        _super.call(this);
-        this.param = { context: null, data: null }; //回调参数
-        this.assets = RES.getRes("assets"); //名称不一致的话需要修改
-        this.isPlayCartoon = false;
-        this.cartoonType = 1;
-        this.param.context = context;
-        this.init(imageName, backFun, descStr, fontSize, cartoonType, assetsName);
+        var _this = _super.call(this) || this;
+        _this.param = { context: null, data: null }; //回调参数
+        _this.assets = RES.getRes("assets"); //名称不一致的话需要修改
+        _this.isPlayCartoon = false;
+        _this.cartoonType = 1;
+        _this.param.context = context;
+        _this.init(imageName, backFun, descStr, fontSize, cartoonType, assetsName);
+        return _this;
     }
-    var d = __define,c=ImageButton,p=c.prototype;
     //按钮初始化
-    p.init = function (imageName, backFun, descStr, fontSize, cartoonType, assetsName) {
+    ImageButton.prototype.init = function (imageName, backFun, descStr, fontSize, cartoonType, assetsName) {
         if (backFun === void 0) { backFun = null; }
         if (descStr === void 0) { descStr = ""; }
         if (fontSize === void 0) { fontSize = 30; }
@@ -66,7 +74,7 @@ var ImageButton = (function (_super) {
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonTouchTap, this);
     };
     //点击事件
-    p.onButtonTouchTap = function (evt) {
+    ImageButton.prototype.onButtonTouchTap = function (evt) {
         if (this.isPlayCartoon) {
             return;
         }
@@ -91,12 +99,17 @@ var ImageButton = (function (_super) {
             }
         };
         egret.Tween.get(this).to({ scaleX: 0.5, scaleY: 0.5, x: (this.x + this.btnImage.width / 4), y: (this.y + this.btnImage.height / 4) }, 100, egret.Ease.sineIn).call(onComplete1, this);
-        var callBackFun = function () {
+        //var callBackFun:Function = function(){
+        //if(this.backFun != null){
+        //this.backFun.apply(this.param.context, [this.param.data]);
+        //}
+        //}
+        //egret.setTimeout(callBackFun, this, 300);
+        egret.setTimeout(function () {
             if (this.backFun != null) {
                 this.backFun.apply(this.param.context, [this.param.data]);
             }
-        };
-        egret.setTimeout(callBackFun, this, 300);
+        }, this, 300);
     };
     /*-----------------------------------------------------------------------------------------
                                                 对外接口
@@ -104,22 +117,22 @@ var ImageButton = (function (_super) {
     /**
      * 设置绑定数据
      */
-    p.setBindData = function (data) {
+    ImageButton.prototype.setBindData = function (data) {
         this.param.data = data;
     };
     /**
      * 获取绑定数据
      */
-    p.getBindData = function () {
+    ImageButton.prototype.getBindData = function () {
         return this.param.data;
     };
     /**
      * 获取按钮图片
      */
-    p.getBitmap = function () {
+    ImageButton.prototype.getBitmap = function () {
         return this.btnImage;
     };
     return ImageButton;
 }(egret.DisplayObjectContainer));
-egret.registerClass(ImageButton,'ImageButton');
+__reflect(ImageButton.prototype, "ImageButton");
 //# sourceMappingURL=ImageButton.js.map

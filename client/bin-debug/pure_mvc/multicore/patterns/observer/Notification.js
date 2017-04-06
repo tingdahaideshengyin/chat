@@ -1,6 +1,9 @@
 //代码已完整
 //INotification
 //INotification功能有点像EVENT，是用来发送和接受的对象
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var puremvc;
 (function (puremvc) {
     var Notification = (function () {
@@ -14,23 +17,22 @@ var puremvc;
             this.body = body;
             this.type = type;
         }
-        var d = __define,c=Notification,p=c.prototype;
-        p.getName = function () {
+        Notification.prototype.getName = function () {
             return this.name;
         };
-        p.setBody = function (body) {
+        Notification.prototype.setBody = function (body) {
             this.body = body;
         };
-        p.getBody = function () {
+        Notification.prototype.getBody = function () {
             return this.body;
         };
-        p.setType = function (type) {
+        Notification.prototype.setType = function (type) {
             this.type = type;
         };
-        p.getType = function () {
+        Notification.prototype.getType = function () {
             return this.type;
         };
-        p.toString = function () {
+        Notification.prototype.toString = function () {
             var msg = "Notification Name: " + this.getName();
             msg += ("\nBody: " + ((this.getBody() == null) ? "null" : this.getBody().toString()));
             msg += ("\nType: " + ((this.getType() == null) ? "null" : this.getType()));
@@ -39,6 +41,6 @@ var puremvc;
         return Notification;
     }());
     puremvc.Notification = Notification;
-    egret.registerClass(Notification,'puremvc.Notification',["puremvc.INotification"]);
+    __reflect(Notification.prototype, "puremvc.Notification", ["puremvc.INotification"]);
 })(puremvc || (puremvc = {}));
 //# sourceMappingURL=Notification.js.map

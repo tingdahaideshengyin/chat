@@ -1,9 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var socketManagerNew;
 (function (socketManagerNew) {
     var SocketManagerNew = (function () {
         function SocketManagerNew() {
         }
-        var d = __define,c=SocketManagerNew,p=c.prototype;
         /** 连接服务器 */
         SocketManagerNew.connectServer = function (host, port) {
             if (host === void 0) { host = ""; }
@@ -39,6 +41,6 @@ var socketManagerNew;
         return SocketManagerNew;
     }());
     socketManagerNew.SocketManagerNew = SocketManagerNew;
-    egret.registerClass(SocketManagerNew,'socketManagerNew.SocketManagerNew');
+    __reflect(SocketManagerNew.prototype, "socketManagerNew.SocketManagerNew");
 })(socketManagerNew || (socketManagerNew = {}));
 //# sourceMappingURL=SocketManagerNew.js.map

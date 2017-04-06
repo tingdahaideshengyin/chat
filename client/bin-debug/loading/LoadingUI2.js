@@ -1,13 +1,21 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /** 新的进度加载 */
 var LoadingUI2 = (function (_super) {
     __extends(LoadingUI2, _super);
     function LoadingUI2() {
-        _super.call(this);
-        this.createLoadingView();
+        var _this = _super.call(this) || this;
+        _this.createLoadingView();
+        return _this;
     }
-    var d = __define,c=LoadingUI2,p=c.prototype;
     //创建背景条
-    p.createLoadingView = function () {
+    LoadingUI2.prototype.createLoadingView = function () {
         this._loadingBG = new egret.Bitmap();
         this._loadingBG.texture = RES.getRes("PreLoadingBg_jpg");
         this.addChild(this._loadingBG);
@@ -26,12 +34,12 @@ var LoadingUI2 = (function (_super) {
         this.addChild(this._loadingProgressBar);
     };
     /** 设置进度 */
-    p.setProgress = function (current, total) {
+    LoadingUI2.prototype.setProgress = function (current, total) {
         //整数百分比
         //var rate:number = Math.round((current / total) * 100);
         this._loadingProgressBar.width = this._loadingProgressBarWidth * (current / total);
     };
     return LoadingUI2;
 }(egret.DisplayObjectContainer));
-egret.registerClass(LoadingUI2,'LoadingUI2');
+__reflect(LoadingUI2.prototype, "LoadingUI2");
 //# sourceMappingURL=LoadingUI2.js.map

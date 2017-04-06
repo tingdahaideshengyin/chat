@@ -25,7 +25,6 @@
 	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
 	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
 	<script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
-	<script egret="lib" src="libs/modules/game/game.web.js" src-release="libs/modules/game/game.web.min.js"></script>
 	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
 	<script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
 	<script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
@@ -39,50 +38,40 @@
 
     <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
     <!--game_files_start-->
-	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
-	<script egret="game" src="bin-debug/Main.js"></script>
-	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
-	<script egret="game" src="bin-debug/chart/MessageData.js"></script>
-	<script egret="game" src="bin-debug/chart/MessageInfo.js"></script>
-	<script egret="game" src="bin-debug/chart/MessageView.js"></script>
-	<script egret="game" src="bin-debug/component/ColorTextField.js"></script>
-	<script egret="game" src="bin-debug/component/ImageButton.js"></script>
-	<script egret="game" src="bin-debug/component/KuaYuLoadImage.js"></script>
-	<script egret="game" src="bin-debug/config/GameConfig.js"></script>
-	<script egret="game" src="bin-debug/config/GlobalData.js"></script>
+	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/observer/Notifier.js"></script>
+	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/mediator/Mediator.js"></script>
+	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/proxy/Proxy.js"></script>
+	<script egret="game" src="bin-debug/core/model/ResourceProxyBase.js"></script>
+	<script egret="game" src="bin-debug/core/view/pannel/BaseMediator.js"></script>
+	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/command/MacroCommand.js"></script>
+	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/command/SimpleCommand.js"></script>
+	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/facade/Facade.js"></script>
+	<script egret="game" src="bin-debug/core/view/pannel/pannel/MapPanel.js"></script>
 	<script egret="game" src="bin-debug/constants/MainNotify.js"></script>
+	<script egret="game" src="bin-debug/constants/panel/ChartNotify.js"></script>
+	<script egret="game" src="bin-debug/constants/panel/UserInfoNotify.js"></script>
 	<script egret="game" src="bin-debug/constants/PanelNotify.js"></script>
 	<script egret="game" src="bin-debug/constants/SceneNotify.js"></script>
 	<script egret="game" src="bin-debug/constants/SysNotify.js"></script>
-	<script egret="game" src="bin-debug/constants/panel/ChartNotify.js"></script>
-	<script egret="game" src="bin-debug/constants/panel/UserInfoNotify.js"></script>
-	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/facade/Facade.js"></script>
 	<script egret="game" src="bin-debug/core/AppFacade.js"></script>
-	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/observer/Notifier.js"></script>
-	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/command/SimpleCommand.js"></script>
 	<script egret="game" src="bin-debug/core/controller/ControllerPrepCommand.js"></script>
 	<script egret="game" src="bin-debug/core/controller/ModelPrepCommand.js"></script>
-	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/command/MacroCommand.js"></script>
-	<script egret="game" src="bin-debug/core/controller/StartupCommand.js"></script>
-	<script egret="game" src="bin-debug/core/controller/ViewPrepCommand.js"></script>
 	<script egret="game" src="bin-debug/core/controller/processor/Processor_100_1.js"></script>
 	<script egret="game" src="bin-debug/core/controller/request/UserInfoRequest.js"></script>
-	<script egret="game" src="bin-debug/core/model/ReadData.js"></script>
-	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/proxy/Proxy.js"></script>
-	<script egret="game" src="bin-debug/core/model/ResourceProxyBase.js"></script>
+	<script egret="game" src="bin-debug/core/controller/StartupCommand.js"></script>
+	<script egret="game" src="bin-debug/core/controller/ViewPrepCommand.js"></script>
 	<script egret="game" src="bin-debug/core/model/proxy/GameProxy.js"></script>
 	<script egret="game" src="bin-debug/core/model/proxy/TemplateProxy.js"></script>
+	<script egret="game" src="bin-debug/core/model/ReadData.js"></script>
+	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
 	<script egret="game" src="bin-debug/core/model/vo/GameVO.js"></script>
 	<script egret="game" src="bin-debug/core/view/GameLayerManager.js"></script>
-	<script egret="game" src="bin-debug/core/view/MainMansger.js"></script>
-	<script egret="game" src="bin-debug/core/view/SceneManager.js"></script>
 	<script egret="game" src="bin-debug/core/view/main/ActivityBar.js"></script>
 	<script egret="game" src="bin-debug/core/view/main/FunctionBar.js"></script>
 	<script egret="game" src="bin-debug/core/view/main/MainUI.js"></script>
 	<script egret="game" src="bin-debug/core/view/main/RoleInfo.js"></script>
-	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/mediator/Mediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/pannel/BaseMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/pannel/PopUpManager.js"></script>
+	<script egret="game" src="bin-debug/core/view/MainMansger.js"></script>
+	<script egret="game" src="bin-debug/chart/MessageInfo.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/mediator/BackpackMediator.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/mediator/ChuangDangMediator.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/mediator/MapMediator.js"></script>
@@ -93,16 +82,19 @@
 	<script egret="game" src="bin-debug/core/view/pannel/mediator/ZhaoXianMediator.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/pannel/Backpack.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/pannel/ChuangDang.js"></script>
-	<script egret="game" src="bin-debug/core/view/pannel/pannel/MapPanel.js"></script>
+	<script egret="game" src="bin-debug/chart/MessageData.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/pannel/MessagePanel.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/pannel/QiangHuaPanel.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/pannel/RolePanel.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/pannel/ShopPanel.js"></script>
 	<script egret="game" src="bin-debug/core/view/pannel/pannel/ZhaoXian.js"></script>
+	<script egret="game" src="bin-debug/core/view/pannel/PopUpManager.js"></script>
 	<script egret="game" src="bin-debug/core/view/scene/HomeCity.js"></script>
+	<script egret="game" src="bin-debug/core/view/SceneManager.js"></script>
 	<script egret="game" src="bin-debug/loading/LoadingUI.js"></script>
 	<script egret="game" src="bin-debug/loading/LoadingUI2.js"></script>
 	<script egret="game" src="bin-debug/loading/WaitPanel.js"></script>
+	<script egret="game" src="bin-debug/Main.js"></script>
 	<script egret="game" src="bin-debug/net/SocketManager.js"></script>
 	<script egret="game" src="bin-debug/net/SocketManagerNew.js"></script>
 	<script egret="game" src="bin-debug/pure_mvc/multicore/core/Controller.js"></script>
@@ -118,8 +110,15 @@
 	<script egret="game" src="bin-debug/pure_mvc/multicore/interfaces/IObserver.js"></script>
 	<script egret="game" src="bin-debug/pure_mvc/multicore/interfaces/IProxy.js"></script>
 	<script egret="game" src="bin-debug/pure_mvc/multicore/interfaces/IView.js"></script>
+	<script egret="game" src="bin-debug/chart/MessageView.js"></script>
+	<script egret="game" src="bin-debug/component/ColorTextField.js"></script>
+	<script egret="game" src="bin-debug/component/ImageButton.js"></script>
+	<script egret="game" src="bin-debug/component/KuaYuLoadImage.js"></script>
 	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/observer/Notification.js"></script>
+	<script egret="game" src="bin-debug/config/GameConfig.js"></script>
 	<script egret="game" src="bin-debug/pure_mvc/multicore/patterns/observer/Observer.js"></script>
+	<script egret="game" src="bin-debug/config/GlobalData.js"></script>
+	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
 	<script egret="game" src="bin-debug/utils/EffectUtils.js"></script>
 	<script egret="game" src="bin-debug/utils/Global.js"></script>
 	<script egret="game" src="bin-debug/utils/NativeApi.js"></script>

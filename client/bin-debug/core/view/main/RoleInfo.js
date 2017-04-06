@@ -1,20 +1,28 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var game;
 (function (game) {
     var RoleInfo = (function (_super) {
         __extends(RoleInfo, _super);
         function RoleInfo() {
-            _super.call(this);
-            this.skinName = "resource/eui_skins_game/RolleInfoSkin.exml";
-            this.addEventListener(eui.UIEvent.COMPLETE, this.createCompleteEvent, this);
+            var _this = _super.call(this) || this;
+            _this.skinName = "resource/eui_skins_game/RolleInfoSkin.exml";
+            _this.addEventListener(eui.UIEvent.COMPLETE, _this.createCompleteEvent, _this);
+            return _this;
         }
-        var d = __define,c=RoleInfo,p=c.prototype;
-        p.partAdded = function (partName, instance) {
+        RoleInfo.prototype.partAdded = function (partName, instance) {
             _super.prototype.partAdded.call(this, partName, instance);
         };
-        p.childrenCreated = function () {
+        RoleInfo.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
         };
-        p.createCompleteEvent = function (event) {
+        RoleInfo.prototype.createCompleteEvent = function (event) {
             this.removeEventListener(eui.UIEvent.COMPLETE, this.createCompleteEvent, this);
             //game.Appfacade.getinstance().registerMediator(new RoleMediator(this));
             //GameLayerManager.gameLayer().sceneLayer.addChild(this);
@@ -22,6 +30,6 @@ var game;
         return RoleInfo;
     }(eui.Component));
     game.RoleInfo = RoleInfo;
-    egret.registerClass(RoleInfo,'game.RoleInfo',["eui.UIComponent"]);
+    __reflect(RoleInfo.prototype, "game.RoleInfo", ["eui.UIComponent", "egret.DisplayObject"]);
 })(game || (game = {}));
 //# sourceMappingURL=RoleInfo.js.map

@@ -1,6 +1,9 @@
 //代码已完整
 //INotification
 //IObserver
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var puremvc;
 (function (puremvc) {
     var Observer = (function () {
@@ -12,31 +15,30 @@ var puremvc;
             this.setNotifyMethod(notifyMethod);
             this.setNotifyContext(notifyContext);
         }
-        var d = __define,c=Observer,p=c.prototype;
-        p.getNotifyMethod = function () {
+        Observer.prototype.getNotifyMethod = function () {
             return this.notify;
         };
-        p.setNotifyMethod = function (notifyMethod) {
+        Observer.prototype.setNotifyMethod = function (notifyMethod) {
             this.notify = notifyMethod;
         };
-        p.getNotifyContext = function () {
+        Observer.prototype.getNotifyContext = function () {
             return this.context;
         };
-        p.setNotifyContext = function (notifyContext) {
+        Observer.prototype.setNotifyContext = function (notifyContext) {
             this.context = notifyContext;
         };
-        p.notifyObserver = function (notification) {
+        Observer.prototype.notifyObserver = function (notification) {
             //this.getNotifyMethod() = Controller.executeCommand
             //notification = new Notification(AppFacade.STARTUP, GameLayerManager.gameLayer())
             //this.getNotifyContext() = Controller
             this.getNotifyMethod().call(this.getNotifyContext(), notification);
         };
-        p.compareNotifyContext = function (object) {
+        Observer.prototype.compareNotifyContext = function (object) {
             return object === this.context;
         };
         return Observer;
     }());
     puremvc.Observer = Observer;
-    egret.registerClass(Observer,'puremvc.Observer',["puremvc.IObserver"]);
+    __reflect(Observer.prototype, "puremvc.Observer", ["puremvc.IObserver"]);
 })(puremvc || (puremvc = {}));
 //# sourceMappingURL=Observer.js.map

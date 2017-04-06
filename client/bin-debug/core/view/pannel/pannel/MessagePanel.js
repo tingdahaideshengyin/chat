@@ -1,25 +1,33 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var game;
 (function (game) {
     var MessagePanel = (function (_super) {
         __extends(MessagePanel, _super);
         function MessagePanel() {
-            _super.call(this);
-            this.currentHeadIConName = "";
-            this.skinName = "resource/eui_skins_game/Pannel/ChartSkin.exml";
-            this.addEventListener(eui.UIEvent.COMPLETE, this.onUIComplete, this);
+            var _this = _super.call(this) || this;
+            _this.currentHeadIConName = "";
+            _this.skinName = "resource/eui_skins_game/Pannel/ChartSkin.exml";
+            _this.addEventListener(eui.UIEvent.COMPLETE, _this.onUIComplete, _this);
+            return _this;
         }
-        var d = __define,c=MessagePanel,p=c.prototype;
-        p.partAdded = function (partName, instance) {
+        MessagePanel.prototype.partAdded = function (partName, instance) {
             _super.prototype.partAdded.call(this, partName, instance);
         };
-        p.childrenCreated = function () {
+        MessagePanel.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
             //this.onUIComplete();
         };
         /*-----------------------------------------------------------------------------------------
                                                 UI初始化设置
         -----------------------------------------------------------------------------------------*/
-        p.onUIComplete = function (event) {
+        MessagePanel.prototype.onUIComplete = function (event) {
             this.removeEventListener(eui.UIEvent.COMPLETE, this.onUIComplete, this);
             //消息容器
             if (!this.messageGroup) {
@@ -61,6 +69,6 @@ var game;
         return MessagePanel;
     }(eui.Component));
     game.MessagePanel = MessagePanel;
-    egret.registerClass(MessagePanel,'game.MessagePanel',["eui.UIComponent"]);
+    __reflect(MessagePanel.prototype, "game.MessagePanel", ["eui.UIComponent", "egret.DisplayObject"]);
 })(game || (game = {}));
 //# sourceMappingURL=MessagePanel.js.map

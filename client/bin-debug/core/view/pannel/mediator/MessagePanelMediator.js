@@ -1,27 +1,35 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var game;
 (function (game) {
     var MessagePanelMediator = (function (_super) {
         __extends(MessagePanelMediator, _super);
         function MessagePanelMediator(viewComponet) {
             if (viewComponet === void 0) { viewComponet = null; }
-            _super.call(this, MessagePanelMediator.NAME, viewComponet);
+            var _this = _super.call(this, MessagePanelMediator.NAME, viewComponet) || this;
             //重写消息处理
-            this.messagePanel = new game.MessagePanel();
+            _this.messagePanel = new game.MessagePanel();
             /*-----------------------------------------------------------------------------------------
                                                     创建消息
             -----------------------------------------------------------------------------------------*/
             //消息列表
-            this.messageViewArray = [];
+            _this.messageViewArray = [];
             //当前消息列表Y位置,初始位置=20
-            this.currentYPos = 20;
+            _this.currentYPos = 20;
             //第1次超出视域时候的数值
-            this.firstDis = 0;
+            _this.firstDis = 0;
             //两条消息之间的间隔
-            this.distance = 30;
+            _this.distance = 30;
+            return _this;
         }
-        var d = __define,c=MessagePanelMediator,p=c.prototype;
         //重写消息列表
-        p.listNotificationInterests = function () {
+        MessagePanelMediator.prototype.listNotificationInterests = function () {
             return [
                 PanelNotify.OPEN_MESSAGE,
                 PanelNotify.CLOSE_MESSAGE,
@@ -30,7 +38,7 @@ var game;
                 SysNotify.CONNECT_SERVER_SUCCESS,
             ];
         };
-        p.handleNotification = function (notification) {
+        MessagePanelMediator.prototype.handleNotification = function (notification) {
             var data = notification.getBody();
             switch (notification.getName()) {
                 case PanelNotify.OPEN_MESSAGE:
@@ -62,7 +70,7 @@ var game;
         /*-----------------------------------------------------------------------------------------
                                                 初始化UI
         -----------------------------------------------------------------------------------------*/
-        p.initUI = function () {
+        MessagePanelMediator.prototype.initUI = function () {
             //关闭按钮
             this.messagePanel.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCloseBtnTouch, this);
             this.messagePanel.sendInfoBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSendInfoBtnTouch, this);
@@ -77,7 +85,7 @@ var game;
                                                 按钮消息处理
         -----------------------------------------------------------------------------------------*/
         //关闭按钮
-        p.onCloseBtnTouch = function (evt) {
+        MessagePanelMediator.prototype.onCloseBtnTouch = function (evt) {
             this.closePanel(1);
             //下面的方法也可行，但是发送消息，多用于不同对象(class)之间的通信
             //如果是相同对象，直接调用本对象方法更容易
@@ -85,7 +93,7 @@ var game;
             //this.sendNotification(PanelNotify.CLOSE_MAP);
         };
         //发送消息按钮
-        p.onSendInfoBtnTouch = function (evt) {
+        MessagePanelMediator.prototype.onSendInfoBtnTouch = function (evt) {
             //重新设置焦点
             this.messagePanel.textInput.setFocus();
             var saidText = this.messagePanel.textInput.text;
@@ -105,7 +113,7 @@ var game;
             this.facade().sendNotification(ChartNotify.SEND_CHART_MESSAGE, dataJson);
         };
         //设置头像
-        p.setHeadIconName1 = function (evt) {
+        MessagePanelMediator.prototype.setHeadIconName1 = function (evt) {
             this.messagePanel.currentHeadIConName = "head1_jpg";
             if (!this.messagePanel.selectImage) {
                 this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
@@ -114,7 +122,7 @@ var game;
             this.messagePanel.selectImage.x = this.messagePanel.headICon_1.x;
             this.messagePanel.selectImage.y = this.messagePanel.headICon_1.y;
         };
-        p.setHeadIconName2 = function (evt) {
+        MessagePanelMediator.prototype.setHeadIconName2 = function (evt) {
             this.messagePanel.currentHeadIConName = "head2_jpg";
             if (!this.messagePanel.selectImage) {
                 this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
@@ -123,7 +131,7 @@ var game;
             this.messagePanel.selectImage.x = this.messagePanel.headICon_2.x;
             this.messagePanel.selectImage.y = this.messagePanel.headICon_2.y;
         };
-        p.setHeadIconName3 = function (evt) {
+        MessagePanelMediator.prototype.setHeadIconName3 = function (evt) {
             this.messagePanel.currentHeadIConName = "head3_jpg";
             if (!this.messagePanel.selectImage) {
                 this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
@@ -132,7 +140,7 @@ var game;
             this.messagePanel.selectImage.x = this.messagePanel.headICon_3.x;
             this.messagePanel.selectImage.y = this.messagePanel.headICon_3.y;
         };
-        p.setHeadIconName4 = function (evt) {
+        MessagePanelMediator.prototype.setHeadIconName4 = function (evt) {
             this.messagePanel.currentHeadIConName = "head4_jpg";
             if (!this.messagePanel.selectImage) {
                 this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
@@ -141,7 +149,7 @@ var game;
             this.messagePanel.selectImage.x = this.messagePanel.headICon_4.x;
             this.messagePanel.selectImage.y = this.messagePanel.headICon_4.y;
         };
-        p.setHeadIconName5 = function (evt) {
+        MessagePanelMediator.prototype.setHeadIconName5 = function (evt) {
             this.messagePanel.currentHeadIConName = "head5_jpg";
             if (!this.messagePanel.selectImage) {
                 this.messagePanel.selectImage = new egret.Bitmap(RES.getRes("chart_xuanzhong_png"));
@@ -150,7 +158,7 @@ var game;
             this.messagePanel.selectImage.x = this.messagePanel.headICon_5.x;
             this.messagePanel.selectImage.y = this.messagePanel.headICon_5.y;
         };
-        p.showMessageView = function (data, showtType) {
+        MessagePanelMediator.prototype.showMessageView = function (data, showtType) {
             var playerName = data.playerName;
             var headIconName = data.headIconName;
             var saidText = data.saidText;
@@ -177,18 +185,18 @@ var game;
         /*-----------------------------------------------------------------------------------------
                                                 socket通信
         -----------------------------------------------------------------------------------------*/
-        p.connectServer = function () {
+        MessagePanelMediator.prototype.connectServer = function () {
             socketManagerNew.SocketManagerNew.connectServer("192.168.1.188", 8888);
         };
         /*-----------------------------------------------------------------------------------------
                                                 初始化界面数据
         -----------------------------------------------------------------------------------------*/
-        p.ininData = function () {
+        MessagePanelMediator.prototype.ininData = function () {
         };
-        MessagePanelMediator.NAME = "MessagePanelMediator";
         return MessagePanelMediator;
     }(BaseMediator));
+    MessagePanelMediator.NAME = "MessagePanelMediator";
     game.MessagePanelMediator = MessagePanelMediator;
-    egret.registerClass(MessagePanelMediator,'game.MessagePanelMediator');
+    __reflect(MessagePanelMediator.prototype, "game.MessagePanelMediator");
 })(game || (game = {}));
 //# sourceMappingURL=MessagePanelMediator.js.map

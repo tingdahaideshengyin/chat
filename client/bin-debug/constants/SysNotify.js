@@ -1,14 +1,16 @@
 //已完整
 /** 系统消息 */
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var SysNotify = (function () {
     function SysNotify() {
     }
-    var d = __define,c=SysNotify,p=c.prototype;
-    /** 服务器连接成功 */
-    SysNotify.CONNECT_SERVER_SUCCESS = "CONNECT_SERVER_SUCCESS";
-    /** 服务器返回数据 */
-    SysNotify.SERVER_BACK_DATA = "SERVER_BACK_DATA";
     return SysNotify;
 }());
-egret.registerClass(SysNotify,'SysNotify');
+/** 服务器连接成功 */
+SysNotify.CONNECT_SERVER_SUCCESS = "CONNECT_SERVER_SUCCESS";
+/** 服务器返回数据 */
+SysNotify.SERVER_BACK_DATA = "SERVER_BACK_DATA";
+__reflect(SysNotify.prototype, "SysNotify");
 //# sourceMappingURL=SysNotify.js.map

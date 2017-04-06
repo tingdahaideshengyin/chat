@@ -1,20 +1,28 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var game;
 (function (game) {
     var ActivityBar = (function (_super) {
         __extends(ActivityBar, _super);
         function ActivityBar() {
-            _super.call(this);
-            this.skinName = "resource/eui_skins_game/ActivifyBarSkin.exml";
-            this.addEventListener(eui.UIEvent.COMPLETE, this.createCompleteEvent, this);
+            var _this = _super.call(this) || this;
+            _this.skinName = "resource/eui_skins_game/ActivifyBarSkin.exml";
+            _this.addEventListener(eui.UIEvent.COMPLETE, _this.createCompleteEvent, _this);
+            return _this;
         }
-        var d = __define,c=ActivityBar,p=c.prototype;
-        p.partAdded = function (partName, instance) {
+        ActivityBar.prototype.partAdded = function (partName, instance) {
             _super.prototype.partAdded.call(this, partName, instance);
         };
-        p.childrenCreated = function () {
+        ActivityBar.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
         };
-        p.createCompleteEvent = function (event) {
+        ActivityBar.prototype.createCompleteEvent = function (event) {
             this.removeEventListener(eui.UIEvent.COMPLETE, this.createCompleteEvent, this);
             //game.Appfacade.getinstance().registerMediator(new RoleMediator(this));
             //GameLayerManager.gameLayer().sceneLayer.addChild(this);
@@ -22,6 +30,6 @@ var game;
         return ActivityBar;
     }(eui.Component));
     game.ActivityBar = ActivityBar;
-    egret.registerClass(ActivityBar,'game.ActivityBar',["eui.UIComponent"]);
+    __reflect(ActivityBar.prototype, "game.ActivityBar", ["eui.UIComponent", "egret.DisplayObject"]);
 })(game || (game = {}));
 //# sourceMappingURL=ActivityBar.js.map

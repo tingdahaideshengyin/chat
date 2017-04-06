@@ -1,3 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var chart;
 (function (chart) {
     var MessageView = (function (_super) {
@@ -10,33 +18,33 @@ var chart;
          * time=发送消息的时间
          */
         function MessageView(playerName, headIconName, saidText, type, time) {
-            _super.call(this);
+            var _this = _super.call(this) || this;
             /** 消息类型0=自己，1=其他 */
-            this._type = 0;
+            _this._type = 0;
             /** 玩家名字 */
-            this._playerName = "";
+            _this._playerName = "";
             /** 玩家名字最大长度 */
-            this.nameMaxLength = 12;
+            _this.nameMaxLength = 12;
             /** 玩家头像宽度 */
-            this.playerHeadIconWidth = 80;
+            _this.playerHeadIconWidth = 80;
             /** 玩家头像高度 */
-            this.playerHeadIconHeight = 80;
+            _this.playerHeadIconHeight = 80;
             /** 消息文本框最大宽度 */
-            this.textInfoMaxWidth = 400;
+            _this.textInfoMaxWidth = 400;
             //消息宽度，eui类 尺寸一旦固定，就无法自动改变，除非通过代码变
-            this._messageWidth = 0;
+            _this._messageWidth = 0;
             //消息高度，eui类 尺寸一旦固定，就无法自动改变，除非通过代码变
-            this._messageHeight = 0;
+            _this._messageHeight = 0;
             //消息背景面板与头像之间的间隔
-            this._dis_backGrounpImage_playerHeadIcon = 5;
-            this._type = type;
-            this.setPlayerIcon(headIconName);
-            this.setPlayerName(playerName);
-            this.setMessageText(saidText);
-            this.showMessage();
+            _this._dis_backGrounpImage_playerHeadIcon = 5;
+            _this._type = type;
+            _this.setPlayerIcon(headIconName);
+            _this.setPlayerName(playerName);
+            _this.setMessageText(saidText);
+            _this.showMessage();
+            return _this;
         }
-        var d = __define,c=MessageView,p=c.prototype;
-        p.childrenCreated = function () {
+        MessageView.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
         };
         /*-----------------------------------------------------------------------------------------
@@ -45,7 +53,7 @@ var chart;
         /**
          * 设置玩家头像
          */
-        p.setPlayerIcon = function (iconName) {
+        MessageView.prototype.setPlayerIcon = function (iconName) {
             if (!this.playerHeadIcon) {
                 this.playerHeadIcon = new egret.Bitmap();
                 this.playerHeadIcon.texture = RES.getRes(iconName);
@@ -60,7 +68,7 @@ var chart;
          * 设置玩家名字
          * name = 玩家名字
          */
-        p.setPlayerName = function (name) {
+        MessageView.prototype.setPlayerName = function (name) {
             if (!this.nameText) {
                 this.nameText = new egret.TextField();
                 this.nameText.textColor = 0x000000;
@@ -72,7 +80,7 @@ var chart;
          * 设置消息内容
          * text = 发送消息的文字内容
          */
-        p.setMessageText = function (text) {
+        MessageView.prototype.setMessageText = function (text) {
             if (!this.textInfo) {
                 this.backGrounpImage = new egret.Bitmap();
                 if (this._type == 1) {
@@ -92,7 +100,7 @@ var chart;
             }
         };
         //调整位置
-        p.showMessage = function () {
+        MessageView.prototype.showMessage = function () {
             //背景框大小
             this.backGrounpImage.width = this.textInfo.width + 20;
             this.backGrounpImage.height = this.textInfo.height + 30;
@@ -135,28 +143,32 @@ var chart;
          * playerName = 玩家名字
          * textInfo = 消息文本
          */
-        p.updateView = function (playerName, headIconName, saidText, type, time) {
+        MessageView.prototype.updateView = function (playerName, headIconName, saidText, type, time) {
             this._type = type;
             this.setPlayerIcon(headIconName);
             this.setPlayerName(playerName);
             this.setMessageText(saidText);
             this.showMessage();
         };
-        d(p, "messageWidth"
+        Object.defineProperty(MessageView.prototype, "messageWidth", {
             /** 获取消息宽度 */
-            ,function () {
+            get: function () {
                 return this._messageWidth;
-            }
-        );
-        d(p, "messageHeight"
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(MessageView.prototype, "messageHeight", {
             /** 获取消息高度 */
-            ,function () {
+            get: function () {
                 return this._messageHeight;
-            }
-        );
+            },
+            enumerable: true,
+            configurable: true
+        });
         return MessageView;
     }(eui.Group));
     chart.MessageView = MessageView;
-    egret.registerClass(MessageView,'chart.MessageView');
+    __reflect(MessageView.prototype, "chart.MessageView");
 })(chart || (chart = {}));
 //# sourceMappingURL=MessageView.js.map

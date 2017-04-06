@@ -1,3 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 //代码已经完整
 var game;
 (function (game) {
@@ -5,12 +13,11 @@ var game;
     var ModelPrepCommand = (function (_super) {
         __extends(ModelPrepCommand, _super);
         function ModelPrepCommand() {
-            _super.call(this);
+            return _super.call(this) || this;
             //多核版本，张鹏自己添加
             //this.initializeNotifier("mainGame");
         }
-        var d = __define,c=ModelPrepCommand,p=c.prototype;
-        p.execute = function (notification) {
+        ModelPrepCommand.prototype.execute = function (notification) {
             //excel数据
             this.facade().registerProxy(new TemplateProxy());
             //游戏其他需要储存的数据
@@ -19,6 +26,6 @@ var game;
         return ModelPrepCommand;
     }(puremvc.SimpleCommand));
     game.ModelPrepCommand = ModelPrepCommand;
-    egret.registerClass(ModelPrepCommand,'game.ModelPrepCommand',["puremvc.ICommand","puremvc.INotifier"]);
+    __reflect(ModelPrepCommand.prototype, "game.ModelPrepCommand", ["puremvc.INotifier"]);
 })(game || (game = {}));
 //# sourceMappingURL=ModelPrepCommand.js.map

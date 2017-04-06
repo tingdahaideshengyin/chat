@@ -1,22 +1,30 @@
 //代码已经完整
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var game;
 (function (game) {
     var MapMediator = (function (_super) {
         __extends(MapMediator, _super);
         function MapMediator(viewComponent) {
             if (viewComponent === void 0) { viewComponent = null; }
-            _super.call(this, MapMediator.NAME, viewComponent);
+            var _this = _super.call(this, MapMediator.NAME, viewComponent) || this;
             //收到消息
-            this.mapPanel = new game.MapPanel();
+            _this.mapPanel = new game.MapPanel();
+            return _this;
         }
-        var d = __define,c=MapMediator,p=c.prototype;
-        p.listNotificationInterests = function () {
+        MapMediator.prototype.listNotificationInterests = function () {
             return [
                 PanelNotify.OPEN_MAP,
                 PanelNotify.CLOSE_MAP
             ];
         };
-        p.handleNotification = function (notification) {
+        MapMediator.prototype.handleNotification = function (notification) {
             var data = notification.getBody();
             switch (notification.getName()) {
                 case PanelNotify.OPEN_MAP:
@@ -31,7 +39,7 @@ var game;
         /*-----------------------------------------------------------------------------------------
                                                 初始化UI
         -----------------------------------------------------------------------------------------*/
-        p.initUI = function () {
+        MapMediator.prototype.initUI = function () {
             //关闭按钮
             this.mapPanel.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCloseBtnTouch, this);
             //其他按钮
@@ -51,40 +59,40 @@ var game;
                                                 按钮消息处理
         -----------------------------------------------------------------------------------------*/
         //关闭按钮
-        p.onCloseBtnTouch = function (evt) {
+        MapMediator.prototype.onCloseBtnTouch = function (evt) {
             this.closePanel(1);
             //下面的方法也可行，但是发送消息，多用于不同对象(class)之间的通信
             //如果是相同对象，直接调用本对象方法更容易
             //this.facade().sendNotification(PanelNotify.CLOSE_MAP);
         };
         //按钮Tips特效
-        p.onBtn0Touch = function (evt) {
+        MapMediator.prototype.onBtn0Touch = function (evt) {
             EffectUtils.showTips("从下到上弹出", 1);
         };
-        p.onBtn1Touch = function (evt) {
+        MapMediator.prototype.onBtn1Touch = function (evt) {
             EffectUtils.showTips("从左到右弹出", 2);
         };
-        p.onBtn2Touch = function (evt) {
+        MapMediator.prototype.onBtn2Touch = function (evt) {
             EffectUtils.showTips("从右到左弹出", 3);
         };
-        p.onBtn3Touch = function (evt) {
+        MapMediator.prototype.onBtn3Touch = function (evt) {
             EffectUtils.showTips("从中间弹出逐渐消失", 4);
         };
-        p.onBtn4Touch = function (evt) {
+        MapMediator.prototype.onBtn4Touch = function (evt) {
             EffectUtils.showTips("从大变小", 5);
         };
-        p.onBtn5Touch = function (evt) {
+        MapMediator.prototype.onBtn5Touch = function (evt) {
             EffectUtils.showTips("警告字体颜色", 5, true);
         };
         /*-----------------------------------------------------------------------------------------
                                                 初始化界面数据
         -----------------------------------------------------------------------------------------*/
-        p.ininData = function () {
+        MapMediator.prototype.ininData = function () {
         };
-        MapMediator.NAME = "MapMediator";
         return MapMediator;
     }(BaseMediator));
+    MapMediator.NAME = "MapMediator";
     game.MapMediator = MapMediator;
-    egret.registerClass(MapMediator,'game.MapMediator');
+    __reflect(MapMediator.prototype, "game.MapMediator");
 })(game || (game = {}));
 //# sourceMappingURL=MapMediator.js.map
