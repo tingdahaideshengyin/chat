@@ -38,8 +38,12 @@
     "resource/eui_skins_game/pannel/BackpackSkin.exml",
     "resource/eui_skins_game/pannel/ChartSkin.exml",
     "resource/eui_skins_game/pannel/ChuangDangSkin.exml",
+    "resource/eui_skins_game/pannel/LonginPanel.exml",
     "resource/eui_skins_game/pannel/MapPannel.exml",
+    "resource/eui_skins_game/pannel/NewFile.exml",
+    "resource/eui_skins_game/pannel/Pomelo.exml",
     "resource/eui_skins_game/pannel/QiangHuaPanSkin.exml",
+    "resource/eui_skins_game/pannel/RegisterPanel.exml",
     "resource/eui_skins_game/pannel/RolePanelSkin.exml",
     "resource/eui_skins_game/pannel/ShopPanelSkin.exml",
     "resource/eui_skins_game/pannel/ZhaoXianSkin.exml"

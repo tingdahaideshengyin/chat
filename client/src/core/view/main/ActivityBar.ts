@@ -28,5 +28,11 @@ module game {
 		-----------------------------------------------------------------------------------------*/
 		//消息按钮
 		public infoBtn:eui.Button;
+
+		//登陆按钮
+		public loginButton:eui.Button;
+
+		//注册按钮
+		public registerButton:eui.Button;
 	}
 }

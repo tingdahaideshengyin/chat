@@ -56,6 +56,12 @@ var game;
             this.functionBar.roleBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRoleBtnTouch, this);
             //消息按钮点击事件
             this.activityBar.infoBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onInfoBtnTouch, this);
+            //登陆按钮点击事件
+            this.activityBar.loginButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.loginBtnTouch, this);
+            //注册按钮点击事件
+            this.activityBar.registerButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.registerBtnTouch, this);
+            //pomelo按钮点击事件
+            this.pomeloButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPomeloButtonTouch, this);
         };
         /*-----------------------------------------------------------------------------------------
                                         导航条添加蒙版
@@ -134,6 +140,18 @@ var game;
         //消息按钮点击事件
         MainUI.prototype.onInfoBtnTouch = function (evt) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_MESSAGE);
+        };
+        //登陆按钮点击事件
+        MainUI.prototype.loginBtnTouch = function (evt) {
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_LOGIN);
+        };
+        //注册按钮点击事件
+        MainUI.prototype.registerBtnTouch = function (evt) {
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_RESISTER);
+        };
+        //pomelo按钮点击事件
+        MainUI.prototype.onPomeloButtonTouch = function (evt) {
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_POMELO);
         };
         return MainUI;
     }(eui.Component));

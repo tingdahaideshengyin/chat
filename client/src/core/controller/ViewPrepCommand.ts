@@ -31,6 +31,12 @@ module game{
 			this.facade().registerMediator(new QiangHuaMediator());
 			//注册消息按钮UI
 			this.facade().registerMediator(new MessagePanelMediator());
+			//注册登陆界面
+			this.facade().registerMediator(new LonginPanelMedistor());
+			//注册注册界面
+			this.facade().registerMediator(new RegisterPanelMediator());
+			//pomelo界面注册
+			this.facade().registerMediator(new PomeloTestMediator());
 		}
 	}
 }

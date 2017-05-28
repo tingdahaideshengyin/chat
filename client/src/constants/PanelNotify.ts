@@ -66,6 +66,24 @@ class PanelNotify{
     //关闭消息
     public static CLOSE_MESSAGE: string = "PANELNOTIFY_CLOSE_MESSAGE";
 
+    //打开登陆界面
+    public static OPEN_LOGIN:string = "PANELNOTIFY_OPEN_LOGIN";
+
+    //关闭登陆界面
+    public static CLOSE_LOGIN:string = "PANELNOTIFY_CLOSE_LOGIN";
+
+    //打开注册界面
+    public static OPEN_RESISTER:string = "PANELNOTIFY_OPEN_RESISTER";
+
+    //关闭注册界面
+    public static CLOSE_RESISTER:string = "PANELNOTIFY_CLOSE_RESISTER:";
+
+    //打开pomelo界面
+    public static OPEN_POMELO:string = "PANELNOTIFY_OPEN_POMELO";
+
+    //关闭pomelo界面
+    public static CLOSE_POMELO:string = "PANELNOTIFY_CLOSE_POMELO";
+
 }	
 
 

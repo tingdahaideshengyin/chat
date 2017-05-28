@@ -48,5 +48,20 @@
         "path": "core/view/pannel/pannel/MessagePanel.ts",
         "class": "MessagePanel",
         "parentPath": ""
+    },
+    "15c04a77f3f": {
+        "path": "core/view/pannel/pannel/LonginPanel.ts",
+        "class": "LonginPanel",
+        "parentPath": ""
+    },
+    "15c04da831b": {
+        "path": "core/view/pannel/pannel/RegisterPanel.ts",
+        "class": "RegisterPanel",
+        "parentPath": ""
+    },
+    "15c4cef3fbb": {
+        "path": "core/view/pannel/pannel/PomeloTest.ts",
+        "class": "PomeloTest",
+        "parentPath": ""
     }
 }

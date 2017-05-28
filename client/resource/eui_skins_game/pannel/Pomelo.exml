@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Pomelo" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label id="showText" text="Label" x="0" y="0" anchorOffsetX="0" width="638" anchorOffsetY="0" height="949" background="true" backgroundColor="0x000000"/>
+	<e:Button id="conectButton" label="连接" x="94" y="1014"/>
+	<e:Button id="stopButton" label="断开" x="308" y="1014"/>
+	<e:Button id="closeButton" label="关闭" x="490" y="1014"/>
+</e:Skin>

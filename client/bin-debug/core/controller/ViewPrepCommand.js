@@ -38,6 +38,12 @@ var game;
             this.facade().registerMediator(new game.QiangHuaMediator());
             //注册消息按钮UI
             this.facade().registerMediator(new game.MessagePanelMediator());
+            //注册登陆界面
+            this.facade().registerMediator(new game.LonginPanelMedistor());
+            //注册注册界面
+            this.facade().registerMediator(new game.RegisterPanelMediator());
+            //pomelo界面注册
+            this.facade().registerMediator(new game.PomeloTestMediator());
         };
         return ViewPrepCommand;
     }(puremvc.SimpleCommand));

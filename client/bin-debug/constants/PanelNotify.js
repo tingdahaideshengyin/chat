@@ -48,5 +48,17 @@ PanelNotify.CLOSE_MAP = "PANELNOTIFY_CLOSE_MAP";
 PanelNotify.OPEN_MESSAGE = "PANELNOTIFY_OPEN_MESSAGE";
 //关闭消息
 PanelNotify.CLOSE_MESSAGE = "PANELNOTIFY_CLOSE_MESSAGE";
+//打开登陆界面
+PanelNotify.OPEN_LOGIN = "PANELNOTIFY_OPEN_LOGIN";
+//关闭登陆界面
+PanelNotify.CLOSE_LOGIN = "PANELNOTIFY_CLOSE_LOGIN";
+//打开注册界面
+PanelNotify.OPEN_RESISTER = "PANELNOTIFY_OPEN_RESISTER";
+//关闭注册界面
+PanelNotify.CLOSE_RESISTER = "PANELNOTIFY_CLOSE_RESISTER:";
+//打开pomelo界面
+PanelNotify.OPEN_POMELO = "PANELNOTIFY_OPEN_POMELO";
+//关闭pomelo界面
+PanelNotify.CLOSE_POMELO = "PANELNOTIFY_CLOSE_POMELO";
 __reflect(PanelNotify.prototype, "PanelNotify");
 //# sourceMappingURL=PanelNotify.js.map

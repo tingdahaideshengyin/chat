@@ -66,7 +66,13 @@ declare class ChartSkin extends eui.Skin{
 }
 declare class ChuangDangSkin extends eui.Skin{
 }
+declare class LonginPanel extends eui.Skin{
+}
 declare class MapPannel extends eui.Skin{
+}
+declare class NewFile extends eui.Skin{
+}
+declare class Pomelo extends eui.Skin{
 }
 declare class QiangHuaPanSkin extends eui.Skin{
 }

@@ -11,4 +11,5 @@
 		</e:Skin>
 		</e:skinName>
 	</e:Button>
+	<e:Button id="pomeloButton" label="pomelo" x="75" y="936"/>
 </e:Skin>
