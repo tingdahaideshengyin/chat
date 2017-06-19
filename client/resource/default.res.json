@@ -5,7 +5,7 @@
 			"name": "preload"
 		},
 		{
-			"keys": "PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_jpg",
+			"keys": "PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_jpg,cologo_png,creat_name_png,create_scene_jpg,flag_1_png,flag_2_png,flag_3_png,hero_5_png,login_bg_jpg,profession_1001_png,profession_1002_png,profession_1003_png,profession_1004_png,profession_1005_png,profession_1006_png,role_yz_png,border_101_s9_30_30_2_2_png,creat_enter_png,btn_103_normal_up_png",
 			"name": "loading"
 		}
 	],
@@ -361,49 +361,139 @@
 			"name": "template_proto"
 		},
 		{
-			"name": "head1_jpg",
+			"url": "images/head/head1.jpg",
 			"type": "image",
-			"url": "images/head/head1.jpg"
+			"name": "head1_jpg"
 		},
 		{
-			"name": "head2_jpg",
+			"url": "images/head/head2.jpg",
 			"type": "image",
-			"url": "images/head/head2.jpg"
+			"name": "head2_jpg"
 		},
 		{
-			"name": "head3_jpg",
+			"url": "images/head/head3.jpg",
 			"type": "image",
-			"url": "images/head/head3.jpg"
+			"name": "head3_jpg"
 		},
 		{
-			"name": "head4_jpg",
+			"url": "images/head/head4.jpg",
 			"type": "image",
-			"url": "images/head/head4.jpg"
+			"name": "head4_jpg"
 		},
 		{
-			"name": "head5_jpg",
+			"url": "images/head/head5.jpg",
 			"type": "image",
-			"url": "images/head/head5.jpg"
+			"name": "head5_jpg"
 		},
 		{
-			"name": "chart_bg_jpg",
+			"url": "images/chart_bg.jpg",
 			"type": "image",
-			"url": "images/chart_bg.jpg"
+			"name": "chart_bg_jpg"
 		},
 		{
-			"name": "chart_other_bg_jpg",
+			"url": "images/chart_other_bg.jpg",
 			"type": "image",
-			"url": "images/chart_other_bg.jpg"
+			"name": "chart_other_bg_jpg"
 		},
 		{
-			"name": "chart_self_bg_jpg",
+			"url": "images/chart_self_bg.jpg",
 			"type": "image",
-			"url": "images/chart_self_bg.jpg"
+			"name": "chart_self_bg_jpg"
 		},
 		{
-			"name": "chart_xuanzhong_png",
+			"url": "images/chart_xuanzhong.png",
 			"type": "image",
-			"url": "images/chart_xuanzhong.png"
+			"name": "chart_xuanzhong_png"
+		},
+		{
+			"url": "ui/login/cologo.png",
+			"type": "image",
+			"name": "cologo_png"
+		},
+		{
+			"url": "ui/login/creat_name.png",
+			"type": "image",
+			"name": "creat_name_png"
+		},
+		{
+			"url": "ui/login/create_scene.jpg",
+			"type": "image",
+			"name": "create_scene_jpg"
+		},
+		{
+			"url": "ui/login/flag_1.png",
+			"type": "image",
+			"name": "flag_1_png"
+		},
+		{
+			"url": "ui/login/flag_2.png",
+			"type": "image",
+			"name": "flag_2_png"
+		},
+		{
+			"url": "ui/login/flag_3.png",
+			"type": "image",
+			"name": "flag_3_png"
+		},
+		{
+			"url": "ui/login/hero_5.png",
+			"type": "image",
+			"name": "hero_5_png"
+		},
+		{
+			"url": "ui/login/login_bg.jpg",
+			"type": "image",
+			"name": "login_bg_jpg"
+		},
+		{
+			"url": "ui/login/profession_1001.png",
+			"type": "image",
+			"name": "profession_1001_png"
+		},
+		{
+			"url": "ui/login/profession_1002.png",
+			"type": "image",
+			"name": "profession_1002_png"
+		},
+		{
+			"url": "ui/login/profession_1003.png",
+			"type": "image",
+			"name": "profession_1003_png"
+		},
+		{
+			"url": "ui/login/profession_1004.png",
+			"type": "image",
+			"name": "profession_1004_png"
+		},
+		{
+			"url": "ui/login/profession_1005.png",
+			"type": "image",
+			"name": "profession_1005_png"
+		},
+		{
+			"url": "ui/login/profession_1006.png",
+			"type": "image",
+			"name": "profession_1006_png"
+		},
+		{
+			"url": "ui/login/role_yz.png",
+			"type": "image",
+			"name": "role_yz_png"
+		},
+		{
+			"url": "ui/border/border_101_s9_30_30_2_2.png",
+			"type": "image",
+			"name": "border_101_s9_30_30_2_2_png"
+		},
+		{
+			"url": "ui/imgtext/creat_enter.png",
+			"type": "image",
+			"name": "creat_enter_png"
+		},
+		{
+			"url": "ui/btn/btn_103_normal_up.png",
+			"type": "image",
+			"name": "btn_103_normal_up_png"
 		}
 	]
 }

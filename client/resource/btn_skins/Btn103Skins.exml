@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Btn103Skins" width="283" height="110" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="btn_103_normal_up_png" right="0" left="0" top="0" bottom="0"/>
+	<e:Image source="btn_103_normal_up_png" right="0" left="0" top="0" bottom="0"/>
+	<e:Label id="lableDisplay" text="" textColor="0xfc9507" size="24" right="0" left="0" top="0" bottom="0" verticalAlign="middle" textAlign="center"/>
+</e:Skin>

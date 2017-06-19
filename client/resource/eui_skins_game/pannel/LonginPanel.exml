@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="LonginPanel" width="400" height="300" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image width="400" height="300" x="0" y="0" source="track_png"/>
-	<e:EditableText id="nameInput" width="184" height="40" text="" x="152" y="85" anchorOffsetY="0" anchorOffsetX="0" border="true" textColor="0x050404"/>
+<e:Skin class="LonginPanel" width="400" height="338" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="400" height="337" x="0" y="0" source="track_png" anchorOffsetY="0"/>
 	<e:Label text="账号：" x="51" y="88" textColor="0x070707"/>
 	<e:Label text="密码：" x="51" y="148" textColor="0x070707"/>
-	<e:EditableText id="passInput" width="184" height="40" text="" x="152" y="140.5" anchorOffsetY="0" anchorOffsetX="0" border="true" textColor="0x070707"/>
-	<e:Button id="loginButton" label="登陆" x="152" y="223"/>
+	<e:Button id="loginButton" label="登陆" x="166" y="218"/>
 	<e:Button id="closeButton" label="x" x="362" y="5" anchorOffsetX="0" width="32" anchorOffsetY="0" height="30"/>
+	<e:Label id="changeText" text="注册新用户" x="144" y="297" textColor="0x070707"/>
+	<e:TextInput id="nameInput" width="183" height="44" x="153" y="82"  textColor="0x070707" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:TextInput id="passInput" width="183" height="44" x="153" y="142" textColor="0x070707" anchorOffsetX="0" anchorOffsetY="0"/>
 </e:Skin>

@@ -15,6 +15,10 @@ var game;
             var _this = _super.call(this, LonginPanelMedistor.NAME, viewComponet) || this;
             //重写消息处理
             _this.loginPanel = new game.LonginPanel();
+            //-------------------------------------------------------------------------------------------
+            //登陆与注册切换
+            //-------------------------------------------------------------------------------------------
+            _this.currentType = "login";
             return _this;
         }
         //重写消息列表
@@ -55,6 +59,8 @@ var game;
             this.loginPanel.loginButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.sendLoginMessage, this);
             //关闭按钮
             this.loginPanel.closeButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCloseBtnTouch, this);
+            //注册登陆切换
+            this.loginPanel.changeText.addEventListener(egret.TouchEvent.TOUCH_TAP, this.changeText, this);
         };
         //-------------------------------------------------------------------------------------------
         //发送登陆消息
@@ -64,10 +70,15 @@ var game;
             var name = this.loginPanel.nameInput.text;
             this.checkName(name);
             //检测密码是否符合规范
-            var password = this.loginPanel.passInput.text;
-            this.checkPassword(password);
-            var data = "userName=" + name + "&" + "userPassword=" + password;
-            HttpManager.connectServer("http://192.168.1.11:3002/login", data);
+            var pwd = this.loginPanel.passInput.text;
+            this.checkPassword(pwd);
+            var data = "userName=" + name + "&" + "password=" + pwd;
+            if (this.currentType == "login") {
+                HttpManager.connectServer("http://123.207.53.160:3001/login", data);
+            }
+            else {
+                HttpManager.connectServer("http://123.207.53.160:3001/register", data);
+            }
         };
         //检测用户名是否符合规范
         LonginPanelMedistor.prototype.checkName = function (name) {
@@ -88,6 +99,20 @@ var game;
             //如果是相同对象，直接调用本对象方法更容易
             //this.facade().sendNotification(PanelNotify.CLOSE_MAP);
             //this.sendNotification(PanelNotify.CLOSE_MAP);
+        };
+        LonginPanelMedistor.prototype.changeText = function (evt) {
+            if (this.currentType == "login") {
+                this.loginPanel.loginButton.label = "注册";
+                this.loginPanel.changeText.text = "使用已有账号";
+                this.currentType = "register";
+            }
+            else {
+                this.loginPanel.loginButton.label = "登陆";
+                this.loginPanel.changeText.text = "注册新用户";
+                this.currentType = "login";
+            }
+            this.loginPanel.nameInput.text = "";
+            this.loginPanel.passInput.text = "";
         };
         return LonginPanelMedistor;
     }(BaseMediator));

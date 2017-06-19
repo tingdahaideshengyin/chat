@@ -22,14 +22,17 @@ module game {
 										        UI自定义变量
 		-----------------------------------------------------------------------------------------*/
 		//名字输入框
-		public nameInput:eui.EditableText;
+		public nameInput:eui.TextInput;
 		//密码输入框
-		public passInput:eui.EditableText;
+		public passInput:eui.TextInput;
 
 		//登陆按钮
 		public loginButton:eui.Button;
 		//关闭按钮
 		public closeButton:eui.Button;
+
+		//注册/登陆切换
+		public changeText:eui.Label;
 
 
 		/*-----------------------------------------------------------------------------------------
