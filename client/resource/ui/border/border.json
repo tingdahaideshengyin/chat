@@ -1,0 +1,6 @@
+{"file":"border.png","frames":{
+"bold_3_y":{"x":1,"y":23,"w":12,"h":6,"offX":0,"offY":3,"sourceW":12,"sourceH":12},
+"bold_3_b":{"x":1,"y":15,"w":12,"h":6,"offX":0,"offY":3,"sourceW":12,"sourceH":12},
+"bold_3_l":{"x":15,"y":15,"w":12,"h":6,"offX":0,"offY":3,"sourceW":12,"sourceH":12},
+"bold_3_r":{"x":15,"y":23,"w":12,"h":6,"offX":0,"offY":3,"sourceW":12,"sourceH":12},
+"bold_2_s":{"x":1,"y":1,"w":25,"h":12,"offX":0,"offY":0,"sourceW":26,"sourceH":12}}}
