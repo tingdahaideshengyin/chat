@@ -39,6 +39,15 @@ var puremvc;
         }
         View.prototype.initializeView = function () {
         };
+        /**
+         * 注册1个观察者对象 notificationName 消息名字  observer 观察泽对象
+         *
+         * @param notificationName
+         * 			消息名字
+         *
+         * @param observer
+         * 			观察泽对象
+         */
         View.prototype.registerObserver = function (notificationName, observer) {
             //notificationName = AppFacade.STARTUP
             //observer = new Observer(Controller.executeCommand,Controller)
@@ -64,6 +73,9 @@ var puremvc;
                 delete this.observerMap[notificationName];
             }
         };
+        /**
+         * 将消息，通知给观察者 Observers 对象
+         */
         View.prototype.notifyObservers = function (notification) {
             var notificationName = notification.getName();
             var observersRef = this.observerMap[notificationName];

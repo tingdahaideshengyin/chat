@@ -26,4 +26,12 @@ module readData {
     {
         return <GameProxy><any>game.AppFacade.getInstance().retrieveProxy(GameProxy.NAME);
     }
+    
+    //----------------------------------------------------------------------------------------------
+    //获取登陆数据
+    //----------------------------------------------------------------------------------------------
+    export function getLoginProxy():LoginProxy
+    {
+        return <LoginProxy><any>game.AppFacade.getInstance().retrieveProxy(LoginProxy.NAME);
+    }
 }

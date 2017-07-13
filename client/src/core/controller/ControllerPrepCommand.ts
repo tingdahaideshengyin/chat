@@ -14,6 +14,8 @@ module game {
 
 			//服务器返回command
 			(new Processor_100_1()).register();
+			//http服务器数据处理
+			(new Processor_http_data().register());
 		}
 	}
 }

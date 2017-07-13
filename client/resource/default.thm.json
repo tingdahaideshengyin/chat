@@ -17,6 +17,10 @@
   },
   "autoGenerateExmlsList": true,
   "exmls": [
+    "resource/btn_skins/Btn103Skins.exml",
+    "resource/btn_skins/Btn131Skin.exml",
+    "resource/btn_skins/Btn132Skin.exml",
+    "resource/btn_skins/Btn133Skins.exml",
     "resource/eui_skins/ButtonSkin.exml",
     "resource/eui_skins/CheckBoxSkin.exml",
     "resource/eui_skins/HScrollBarSkin.exml",
@@ -46,6 +50,9 @@
     "resource/eui_skins_game/pannel/RegisterPanel.exml",
     "resource/eui_skins_game/pannel/RolePanelSkin.exml",
     "resource/eui_skins_game/pannel/ShopPanelSkin.exml",
-    "resource/eui_skins_game/pannel/ZhaoXianSkin.exml"
+    "resource/eui_skins_game/pannel/ZhaoXianSkin.exml",
+    "resource/ui_skins/CreateRole.exml",
+    "resource/ui_skins/Loginskin.exml",
+    "resource/ui_skins/ServerList.exml"
   ]
 }

@@ -12,12 +12,15 @@ module puremvc{
 		 * 
 		 * @param name
 		 * 		The name of the notification to send.
+		 * 		消息的名字,string类型
 		 * 
 		 * @param body
 		 * 		The body of the notification (optional).
+		 * 		消息的数据，类型any
 		 * 
 		 * @param type
 		 * 		The type of the notification (optional).
+		 * 		消息的类型，tring类型
 		 */
 		sendNotification(name:string,body?:any,type?:string):void;
 
@@ -29,6 +32,7 @@ module puremvc{
 		 * 
 		 * @param key
 		 * 		The multiton key for this <code>INotifier</code> to use.
+		 * 		初始化消息通知者，key，多核标识
 		 * 
 		 */
 		initializeNotifier(key:string):void;

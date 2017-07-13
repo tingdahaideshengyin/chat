@@ -11,4 +11,7 @@ class SysNotify {
 
 	/** 服务器返回数据 */
 	public static SERVER_BACK_DATA:string = "SERVER_BACK_DATA";
+
+	/** 收到http服务器消息 */
+	public static RECEIVE_HTTP_DATA:string = "receive_http_data";
 }

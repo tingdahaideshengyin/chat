@@ -49,6 +49,15 @@ module puremvc {
 		}
 
 
+		/**
+		 * 注册1个观察者对象 notificationName 消息名字  observer 观察泽对象
+		 * 
+		 * @param notificationName
+		 * 			消息名字
+		 * 
+		 * @param observer
+		 * 			观察泽对象
+		 */
 		registerObserver(notificationName:string,observer:IObserver):void{
 			//notificationName = AppFacade.STARTUP
 			//observer = new Observer(Controller.executeCommand,Controller)
@@ -78,7 +87,9 @@ module puremvc {
 			}
 		}
 
-
+		/**
+		 * 将消息，通知给观察者 Observers 对象
+		 */
 		notifyObservers(notification:INotification):void{
 			var notificationName:string = notification.getName();
 			var observersRef = this.observerMap[ notificationName ];

@@ -22,6 +22,8 @@ var game;
             (new game.MainMansger()).register();
             //服务器返回command
             (new game.Processor_100_1()).register();
+            //http服务器数据处理
+            (new game.Processor_http_data().register());
         };
         return ControllerPrepCommand;
     }(puremvc.SimpleCommand));

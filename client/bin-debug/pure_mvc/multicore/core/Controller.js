@@ -36,6 +36,17 @@ var puremvc;
                 command.execute(notification);
             }
         };
+        /**
+         * 注册1个command控制器，通1个notificationName 只会注册1次，且不会覆盖
+         *
+         * 收到 notificationName 消息后，会创建1个 commandCkassRef 对象，再由commandCkassRef执行
+         *
+         * @param notificationName
+         *        消息发送者，以及其包含的信息名字
+         *
+         * @param commandClassRes
+         *        收到 notificationName 消息后，由 commandClassRes 对象执行相关操作
+         */
         Controller.prototype.registerCommand = function (notificationName, commandCkassRef) {
             //notificationName = AppFacade.STARTUP
             //commandCkassRef = game.StartupCommand

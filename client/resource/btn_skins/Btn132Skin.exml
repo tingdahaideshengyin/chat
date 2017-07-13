@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Btn132Skin" width="112" height="112" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="down,up,disabled" >
+	<e:Image id="up" width="100%" height="100%" includeIn="up" x="0" y="0" source="btn_132_normal_up_png"/>
+	<e:Image id="down" width="100%" height="100%" includeIn="down" x="0" y="0" source="btn_132_normal_down_png"/>
+</e:Skin>

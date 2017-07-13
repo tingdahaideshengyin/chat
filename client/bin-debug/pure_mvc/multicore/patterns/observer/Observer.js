@@ -8,19 +8,23 @@ var puremvc;
 (function (puremvc) {
     var Observer = (function () {
         function Observer(notifyMethod, notifyContext) {
+            //收到消息通知后，需要执行的函数
             this.notify = null;
+            //收到消息通知后，需要执行notify函数 的对象
             this.context = null;
             //notifyMethod = Controller.executeCommand
             //notifyContext = Controller
             this.setNotifyMethod(notifyMethod);
             this.setNotifyContext(notifyContext);
         }
+        /** 收到消息通知后，需要执行的函数 */
         Observer.prototype.getNotifyMethod = function () {
             return this.notify;
         };
         Observer.prototype.setNotifyMethod = function (notifyMethod) {
             this.notify = notifyMethod;
         };
+        /** 收到消息通知后，需要执行该函数的对象 */
         Observer.prototype.getNotifyContext = function () {
             return this.context;
         };

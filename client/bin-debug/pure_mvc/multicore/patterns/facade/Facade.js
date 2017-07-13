@@ -50,6 +50,16 @@ var puremvc;
                 this.view = puremvc.View.getInstance(this.multitonKey);
             }
         };
+        /**
+         * 注册1个 Icommand 对象，该 Icommand 对象使用 IController 接口,
+         * 收到 notificationName 消息后，由 commandClassRes 对象执行相关操作
+         *
+         * @param notificationName
+         *        消息发送者，以及其包含的信息名字
+         *
+         * @param commandClassRes
+         *        收到 notificationName 消息后，由 commandClassRes 对象执行相关操作
+         */
         Facade.prototype.registerCommand = function (notificationName, commandClassRes) {
             //notificationName = AppFacade.STARTUP
             //commandClassRes = StartupCommand
@@ -95,11 +105,19 @@ var puremvc;
         Facade.prototype.hasMediator = function (mediatorName) {
             return this.view.hasMediator(mediatorName);
         };
+        /**
+         * 将消息通知给view对象中得观察者
+         */
         Facade.prototype.notifyObservers = function (notification) {
             if (this.view) {
                 this.view.notifyObservers(notification);
             }
         };
+        /**
+         * 发送消息，所有的消息都是直接或者间接通过facade发送，将消息通知给view对象中得观察者。
+         *
+         * name 消息名字 body 消息内容 type 消息类型
+         */
         Facade.prototype.sendNotification = function (name, body, type) {
             //name = AppFacade.STARTUP
             //body = GameLayerManager.gameLayer()

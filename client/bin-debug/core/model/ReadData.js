@@ -24,5 +24,12 @@ var readData;
         return game.AppFacade.getInstance().retrieveProxy(GameProxy.NAME);
     }
     readData.getGameDataProxy = getGameDataProxy;
+    //----------------------------------------------------------------------------------------------
+    //获取登陆数据
+    //----------------------------------------------------------------------------------------------
+    function getLoginProxy() {
+        return game.AppFacade.getInstance().retrieveProxy(LoginProxy.NAME);
+    }
+    readData.getLoginProxy = getLoginProxy;
 })(readData || (readData = {}));
 //# sourceMappingURL=ReadData.js.map

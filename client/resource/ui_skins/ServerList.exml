@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ServerList" width="545" height="300" xmlns:e="http://ns.egret.com/eui">
+	<e:VScrollBar width="198" height="257" x="20" y="24" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:VScrollBar width="301" height="247" x="231" y="28" anchorOffsetX="0" anchorOffsetY="0"/>
+</e:Skin>

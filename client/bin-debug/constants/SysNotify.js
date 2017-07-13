@@ -12,5 +12,7 @@ var SysNotify = (function () {
 SysNotify.CONNECT_SERVER_SUCCESS = "CONNECT_SERVER_SUCCESS";
 /** 服务器返回数据 */
 SysNotify.SERVER_BACK_DATA = "SERVER_BACK_DATA";
+/** 收到http服务器消息 */
+SysNotify.RECEIVE_HTTP_DATA = "receive_http_data";
 __reflect(SysNotify.prototype, "SysNotify");
 //# sourceMappingURL=SysNotify.js.map

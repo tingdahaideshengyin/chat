@@ -8,6 +8,7 @@ var SceneNotify = (function () {
     }
     return SceneNotify;
 }());
+/** 打开登录界面 */
 /** 打开主城场景 */
 SceneNotify.OPEN_HOME = "SceneNotify_OPEN_HOME";
 /** 关闭主城 */

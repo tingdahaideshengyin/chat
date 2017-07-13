@@ -12,8 +12,11 @@ module game {
 			return [
 				PanelNotify.OPEN_LOGIN,
 				PanelNotify.CLOSE_LOGIN,
-				LoginNotify.SEND_CHART_MESSAGE,
-				LoginNotify.RECEIVE_CHART_MESSAGE
+				//LoginNotify.SEND_CHART_MESSAGE,
+				//LoginNotify.RECEIVE_CHART_MESSAGE,
+				LoginNotify.ACCOUNT_OR_PASSWORD_ERROR,
+				LoginNotify.LOGIN_SUCCESS,
+				LoginNotify.NOT_ACCOUNT_OR_PASSWORD
 			];
 		}
 
@@ -39,6 +42,15 @@ module game {
 					}
 					var jsonObject = JSON.parse(<string>data);
 					this.checkData(jsonObject);
+					break;
+				case LoginNotify.ACCOUNT_OR_PASSWORD_ERROR:
+					console.log(5001-5002);
+					break;
+				case LoginNotify.LOGIN_SUCCESS:
+					console.log(200);
+					break;
+				case LoginNotify.NOT_ACCOUNT_OR_PASSWORD:
+					console.log(500);
 					break;
 			}
 		}
@@ -72,9 +84,11 @@ module game {
 			var data:string = "userName="+ name + "&" + "password=" + pwd;
 
 			if(this.currentType == "login"){
-				HttpManager.connectServer("http://123.207.53.160:3001/login", data);
+				net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/login", data);
+				//net.HttpManager.connectServerWithPost("http://192.168.1.222:3001/login", data);
 			}else{
-				HttpManager.connectServer("http://123.207.53.160:3001/register", data);
+				net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/register", data);
+				//net.HttpManager.connectServerWithPost("http://192.168.1.222:3001/register", data);
 			}
 		}
 

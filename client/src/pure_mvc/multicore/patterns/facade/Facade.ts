@@ -62,7 +62,16 @@ module puremvc {
 		}
 
 
-
+		/**
+		 * 注册1个 Icommand 对象，该 Icommand 对象使用 IController 接口,
+		 * 收到 notificationName 消息后，由 commandClassRes 对象执行相关操作
+		 * 
+		 * @param notificationName
+		 *        消息发送者，以及其包含的信息名字
+		 * 
+		 * @param commandClassRes
+		 *        收到 notificationName 消息后，由 commandClassRes 对象执行相关操作
+		 */
 		registerCommand(notificationName:string,commandClassRes:Function):void{
 			//notificationName = AppFacade.STARTUP
 			//commandClassRes = StartupCommand
@@ -119,12 +128,20 @@ module puremvc {
 			return this.view.hasMediator( mediatorName );
 		}
 
+		/**
+		 * 将消息通知给view对象中得观察者
+		 */
 		notifyObservers(notification:INotification):void{
 			if(this.view){
 				this.view.notifyObservers( notification );
 			}
 		}
 
+		/**
+		 * 发送消息，所有的消息都是直接或者间接通过facade发送，将消息通知给view对象中得观察者。
+		 * 
+		 * name 消息名字 body 消息内容 type 消息类型
+		 */
 		sendNotification(name:string,body?:any,type?:string):void{
 			//name = AppFacade.STARTUP
 			//body = GameLayerManager.gameLayer()

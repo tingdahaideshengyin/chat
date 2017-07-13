@@ -1,5 +1,5 @@
 	/**
-	* 弹窗消息
+	* 主界面所有的UI弹出和关闭消息
 	* by dily
 	* (c) copyright 2014 - 2035
 	* All Rights Reserved. 

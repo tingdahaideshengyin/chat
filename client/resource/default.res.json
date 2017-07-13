@@ -1,12 +1,16 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,homeCity_jpg,activityBtn_png,backpackBtn_png,bgBarBg_png,chuangDangBtn_png,closeBtn_png,friendBtn_png,headBg_png,hengImg_png,infoBtn_png,jinjieBtn_png,kaiFuBtn_png,lianqiBtn_png,lunjianBtn_png,mainBtn_png,mapBtn_png,missionBtn_png,pgBar1_png,pgBar2_png,qianghuaBtn_png,roleBtn_png,roleInfoImg_png,shopBtn_png,shuImg_png,warBtn_png,zhaoXianBtn_png,BeiBaoPanel_jpg,ChuangDangPannel_jpg,HuoDongPanel_jpg,KaiFuPanel_jpg,MapPanel_jpg,MessagePanel_jpg,QiangHuaPanel_jpg,RolePanel_jpg,ShopPanel_jpg,ZhaoXianPanel_jpg,scene2_jpeg,scene3_jpeg,loadingCircle_png,tipsBg_png,yellowBtn_png,template_json,template_proto,head1_jpg,head2_jpg,head3_jpg,head4_jpg,head5_jpg,chart_bg_jpg,chart_other_bg_jpg,chart_self_bg_jpg,chart_xuanzhong_png",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,homeCity_jpg,activityBtn_png,backpackBtn_png,bgBarBg_png,chuangDangBtn_png,closeBtn_png,friendBtn_png,headBg_png,hengImg_png,infoBtn_png,jinjieBtn_png,kaiFuBtn_png,lianqiBtn_png,lunjianBtn_png,mainBtn_png,mapBtn_png,missionBtn_png,pgBar1_png,pgBar2_png,qianghuaBtn_png,roleBtn_png,roleInfoImg_png,shopBtn_png,shuImg_png,warBtn_png,zhaoXianBtn_png,BeiBaoPanel_jpg,ChuangDangPannel_jpg,HuoDongPanel_jpg,KaiFuPanel_jpg,MapPanel_jpg,MessagePanel_jpg,QiangHuaPanel_jpg,RolePanel_jpg,ShopPanel_jpg,ZhaoXianPanel_jpg,scene2_jpeg,scene3_jpeg,loadingCircle_png,tipsBg_png,yellowBtn_png,template_json,template_proto,head1_jpg,head2_jpg,head3_jpg,head4_jpg,head5_jpg,chart_bg_jpg,chart_other_bg_jpg,chart_self_bg_jpg,chart_xuanzhong_png,role_yz_png",
 			"name": "preload"
 		},
 		{
-			"keys": "PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_jpg,cologo_png,creat_name_png,create_scene_jpg,flag_1_png,flag_2_png,flag_3_png,hero_5_png,login_bg_jpg,profession_1001_png,profession_1002_png,profession_1003_png,profession_1004_png,profession_1005_png,profession_1006_png,role_yz_png,border_101_s9_30_30_2_2_png,creat_enter_png,btn_103_normal_up_png",
+			"keys": "flag_1_png,flag_2_png,flag_3_png,hero_5_png,login_bg_jpg,border_101_s9_30_30_2_2_png,creat_enter_png,btn_103_normal_up_png",
 			"name": "loading"
+		},
+		{
+			"keys": "create_scene_jpg,role_yz_png,profession_1001_png,profession_1002_png,profession_1003_png,profession_1004_png,profession_1005_png,profession_1006_png,creat_zhanshi_png,creat_zhanshi_d_png,creat_daoshi_png,creat_daoshi_d_png,creat_fashi_png,creat_fashi_d_png,btn_131_normal_up_png,btn_131_normal_down_png,btn_131_select_up_png,btn_132_normal_up_png,btn_132_normal_down_png,btn_132_select_up_tmp,creat_name_png,border_305_s3_10_1_h_png,btn_133_normal_up_png",
+			"name": "choseRole"
 		}
 	],
 	"resources": [
@@ -406,11 +410,6 @@
 			"name": "chart_xuanzhong_png"
 		},
 		{
-			"url": "ui/login/cologo.png",
-			"type": "image",
-			"name": "cologo_png"
-		},
-		{
 			"url": "ui/login/creat_name.png",
 			"type": "image",
 			"name": "creat_name_png"
@@ -494,6 +493,76 @@
 			"url": "ui/btn/btn_103_normal_up.png",
 			"type": "image",
 			"name": "btn_103_normal_up_png"
+		},
+		{
+			"url": "ui/imgtext/creat_zhanshi.png",
+			"type": "image",
+			"name": "creat_zhanshi_png"
+		},
+		{
+			"url": "ui/imgtext/creat_zhanshi_d.png",
+			"type": "image",
+			"name": "creat_zhanshi_d_png"
+		},
+		{
+			"url": "ui/imgtext/creat_daoshi.png",
+			"type": "image",
+			"name": "creat_daoshi_png"
+		},
+		{
+			"url": "ui/imgtext/creat_daoshi_d.png",
+			"type": "image",
+			"name": "creat_daoshi_d_png"
+		},
+		{
+			"url": "ui/imgtext/creat_fashi.png",
+			"type": "image",
+			"name": "creat_fashi_png"
+		},
+		{
+			"url": "ui/imgtext/creat_fashi_d.png",
+			"type": "image",
+			"name": "creat_fashi_d_png"
+		},
+		{
+			"url": "ui/btn/btn_131_normal_up.png",
+			"type": "image",
+			"name": "btn_131_normal_up_png"
+		},
+		{
+			"url": "ui/btn/btn_131_normal_down.png",
+			"type": "image",
+			"name": "btn_131_normal_down_png"
+		},
+		{
+			"url": "ui/btn/btn_131_select_up.png",
+			"type": "image",
+			"name": "btn_131_select_up_png"
+		},
+		{
+			"url": "ui/btn/btn_132_normal_up.png",
+			"type": "image",
+			"name": "btn_132_normal_up_png"
+		},
+		{
+			"url": "ui/btn/btn_132_normal_down.png",
+			"type": "image",
+			"name": "btn_132_normal_down_png"
+		},
+		{
+			"url": "ui/btn/btn_132_select_up.tmp",
+			"type": "bin",
+			"name": "btn_132_select_up_tmp"
+		},
+		{
+			"url": "ui/border/border_305_s3_10_1_h.png",
+			"type": "image",
+			"name": "border_305_s3_10_1_h_png"
+		},
+		{
+			"url": "ui/btn/btn_133_normal_up.png",
+			"type": "image",
+			"name": "btn_133_normal_up_png"
 		}
 	]
 }

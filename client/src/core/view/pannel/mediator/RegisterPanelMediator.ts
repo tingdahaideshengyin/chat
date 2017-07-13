@@ -65,7 +65,7 @@ module game {
 			this.checkPassword(password);
 			var data:string = "userName="+ name + "&" + "userPassword=" + password;
 
-			HttpManager.connectServer("http://192.168.1.11:3002/register", data);
+			//net.HttpManager.connectServer("http://192.168.1.11:3002/register", data);
 		}
 
 		//检测用户名是否符合规范

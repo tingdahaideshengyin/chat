@@ -48,7 +48,7 @@ class Main extends eui.UILayer {
         //Config loading process interface
         //设置加载进度界面
         this.loadingView = new LoadingUI();
-        //this.stage.addChild(this.loadingView);
+        this.stage.addChild(this.loadingView);
         GameLayerManager.gameLayer().addChild(this.loadingView);
 
 
@@ -75,7 +75,7 @@ class Main extends eui.UILayer {
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
         RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
         RES.loadGroup("loading", 1);
-        //RES.loadGroup("preload");
+        RES.loadGroup("preload");
     }
 
 
@@ -98,8 +98,8 @@ class Main extends eui.UILayer {
         if(event.groupName == "loading")
         {
              GameLayerManager.gameLayer().removeChild(this.loadingView);
-             //this.loadingUI2 = new LoadingUI2();
-             //GameLayerManager.gameLayer().addChild(this.loadingUI2);
+             this.loadingUI2 = new LoadingUI2();
+             GameLayerManager.gameLayer().addChild(this.loadingUI2);
         }
 
         if (event.groupName == "preload") {

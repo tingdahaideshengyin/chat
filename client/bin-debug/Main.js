@@ -54,7 +54,7 @@ var Main = (function (_super) {
         //Config loading process interface
         //设置加载进度界面
         this.loadingView = new LoadingUI();
-        //this.stage.addChild(this.loadingView);
+        this.stage.addChild(this.loadingView);
         GameLayerManager.gameLayer().addChild(this.loadingView);
         // initialize the Resource loading library
         //初始化Resource资源加载库

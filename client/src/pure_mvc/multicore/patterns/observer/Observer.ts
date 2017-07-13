@@ -5,8 +5,10 @@
 module puremvc {
 	export class Observer implements IObserver {
 
+		//收到消息通知后，需要执行的函数
 		private notify:Function = null;
 
+		//收到消息通知后，需要执行notify函数 的对象
 		private context:any = null;
 
 		public constructor(notifyMethod:Function, notifyContext:any) {
@@ -16,6 +18,7 @@ module puremvc {
 			this.setNotifyContext(notifyContext);
 		}
 
+		/** 收到消息通知后，需要执行的函数 */
 		private getNotifyMethod():Function
 		{
 			return this.notify;
@@ -26,7 +29,7 @@ module puremvc {
 			this.notify = notifyMethod;
 		}
 
-		
+		/** 收到消息通知后，需要执行该函数的对象 */
 		private getNotifyContext():any{
 			return this.context;
 		}

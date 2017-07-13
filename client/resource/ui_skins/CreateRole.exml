@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CreateRole" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bgImage" x="0" y="0" source="create_scene_jpg" width="720" height="1280"/>
+	<e:Image id="standBg" width="350" height="213" x="177" y="641" source="role_yz_png"/>
+	<e:RadioButton id="role1" label="" x="105" y="840">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="creat_zhanshi_png" source.down="creat_zhanshi_d_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton id="role2" label="" x="318" y="840">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="creat_daoshi_png" source.down="creat_daoshi_d_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton id="role3" label="" x="510" y="840">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="creat_fashi_png" source.down="creat_fashi_d_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+	<e:RadioButton id="boyBtn" label="RadioButton" x="79" y="657" skinName="Btn131Skin"/>
+	<e:RadioButton id="girlBtn" label="RadioButton" x="549" y="674" skinName="Btn132Skin"/>
+	<e:Button id="query" label="" x="229.5" y="1141" skinName="Btn103Skins"/>
+	<e:Image width="117" height="39" x="76" y="1039" source="creat_name_png" anchorOffsetX="0"/>
+	<e:TextInput id="nameInputText" width="316" height="46" x="213" y="1035" anchorOffsetX="0" alpha="0" textColor="0xFFFFFF"/>
+	<e:Image width="320" height="40" x="211" y="1038" source="border_305_s3_10_1_h_png" scale9Grid="3,5,20,30"/>
+	<e:Button id="choseNameBtn" label="" x="554" y="1036" skinName="Btn133Skins"/>
+	<e:Image id="selectRole" x="63" y="252" source="profession_1001_png"/>
+</e:Skin>

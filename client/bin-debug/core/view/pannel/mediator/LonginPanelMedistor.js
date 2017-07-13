@@ -26,8 +26,11 @@ var game;
             return [
                 PanelNotify.OPEN_LOGIN,
                 PanelNotify.CLOSE_LOGIN,
-                LoginNotify.SEND_CHART_MESSAGE,
-                LoginNotify.RECEIVE_CHART_MESSAGE
+                //LoginNotify.SEND_CHART_MESSAGE,
+                //LoginNotify.RECEIVE_CHART_MESSAGE,
+                LoginNotify.ACCOUNT_OR_PASSWORD_ERROR,
+                LoginNotify.LOGIN_SUCCESS,
+                LoginNotify.NOT_ACCOUNT_OR_PASSWORD
             ];
         };
         LonginPanelMedistor.prototype.handleNotification = function (notification) {
@@ -48,6 +51,15 @@ var game;
                     }
                     var jsonObject = JSON.parse(data);
                     this.checkData(jsonObject);
+                    break;
+                case LoginNotify.ACCOUNT_OR_PASSWORD_ERROR:
+                    console.log(5001 - 5002);
+                    break;
+                case LoginNotify.LOGIN_SUCCESS:
+                    console.log(200);
+                    break;
+                case LoginNotify.NOT_ACCOUNT_OR_PASSWORD:
+                    console.log(500);
                     break;
             }
         };
@@ -74,10 +86,10 @@ var game;
             this.checkPassword(pwd);
             var data = "userName=" + name + "&" + "password=" + pwd;
             if (this.currentType == "login") {
-                HttpManager.connectServer("http://123.207.53.160:3001/login", data);
+                net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/login", data);
             }
             else {
-                HttpManager.connectServer("http://123.207.53.160:3001/register", data);
+                net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/register", data);
             }
         };
         //检测用户名是否符合规范

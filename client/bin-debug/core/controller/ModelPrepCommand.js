@@ -22,6 +22,8 @@ var game;
             this.facade().registerProxy(new TemplateProxy());
             //游戏其他需要储存的数据
             this.facade().registerProxy(new GameProxy());
+            //游戏登陆数据
+            this.facade().registerProxy(new LoginProxy());
         };
         return ModelPrepCommand;
     }(puremvc.SimpleCommand));

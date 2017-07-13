@@ -5,6 +5,9 @@ class SceneNotify {
 	
 	}
 
+	/** 打开登录界面 */
+	
+
 	/** 打开主城场景 */
 	public static OPEN_HOME:string = "SceneNotify_OPEN_HOME";
 

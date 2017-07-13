@@ -1,3 +1,11 @@
+declare class Btn103Skins extends eui.Skin{
+}
+declare class Btn131Skin extends eui.Skin{
+}
+declare class Btn132Skin extends eui.Skin{
+}
+declare class Btn133Skins extends eui.Skin{
+}
 declare module skins{
 	class ButtonSkin extends eui.Skin{
 	}
@@ -81,4 +89,10 @@ declare class RolePanelSkin extends eui.Skin{
 declare class ShopPanelSkin extends eui.Skin{
 }
 declare class ZhaoXianSkin extends eui.Skin{
+}
+declare class CreateRole extends eui.Skin{
+}
+declare class Loginskin extends eui.Skin{
+}
+declare class ServerList extends eui.Skin{
 }
