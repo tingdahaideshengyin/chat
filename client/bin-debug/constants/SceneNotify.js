@@ -9,6 +9,13 @@ var SceneNotify = (function () {
     return SceneNotify;
 }());
 /** 打开登录界面 */
+SceneNotify.OPEN_LOGIN_SCENE = "open_login_scene";
+/** 关闭登陆界面 */
+SceneNotify.CLOSE_LOGIN_SCENE = "close_login_scene";
+/** 打开角色创建界面 */
+SceneNotify.OPEN_CREATE_ROLE = "open_create_role";
+/** 关闭角色创建界面 */
+SceneNotify.CLOSE_CREATE_ROLE = "close_create_role";
 /** 打开主城场景 */
 SceneNotify.OPEN_HOME = "SceneNotify_OPEN_HOME";
 /** 关闭主城 */

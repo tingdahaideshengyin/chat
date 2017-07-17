@@ -10,7 +10,7 @@ class BaseMediator extends puremvc.Mediator implements puremvc.IMediator{
 	private isInitialized:boolean = false;
 	//是否已经显示
 	private isPopUp:boolean = false;
-	//Ui容器
+	//需要显示的UI组件
 	private uiContener:eui.Component = null;
 	public w:number = 0;
 	public h:number = 0;

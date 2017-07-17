@@ -46,6 +46,12 @@ module game {
 				case 502:
 					this.facade().sendNotification(LoginNotify.ACCOUNT_OR_PASSWORD_ERROR);
 					break;
+				case 601:
+					this.facade().sendNotification(LoginNotify.ACCOUNT_IS_EXISTENT);
+					break;
+				case 602:
+					this.facade().sendNotification(LoginNotify.ACCOUNT_CREATE_ERROR);
+					break;
 			}
 		}
 	}

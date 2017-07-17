@@ -33,10 +33,10 @@ var game;
                 LoginNotify.NOT_ACCOUNT_OR_PASSWORD
             ];
         };
+        ;
         LonginPanelMedistor.prototype.handleNotification = function (notification) {
             switch (notification.getName()) {
                 case PanelNotify.OPEN_LOGIN:
-                    //显示消息面板
                     this.showUI(this.loginPanel, false, 0, 0, 1);
                     break;
                 case PanelNotify.CLOSE_LOGIN:
@@ -61,6 +61,10 @@ var game;
                 case LoginNotify.NOT_ACCOUNT_OR_PASSWORD:
                     console.log(500);
                     break;
+                case LoginNotify.ACCOUNT_IS_EXISTENT:
+                    console.log(601);
+                case LoginNotify.ACCOUNT_CREATE_ERROR:
+                    console.log(602);
             }
         };
         /*-----------------------------------------------------------------------------------------
@@ -86,10 +90,10 @@ var game;
             this.checkPassword(pwd);
             var data = "userName=" + name + "&" + "password=" + pwd;
             if (this.currentType == "login") {
-                net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/login", data);
+                net.HttpManager.connectServerWithPost(GlobalData.getAccountServer() + "/login", data);
             }
             else {
-                net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/register", data);
+                net.HttpManager.connectServerWithPost(GlobalData.getAccountServer() + "/register", data);
             }
         };
         //检测用户名是否符合规范
@@ -110,7 +114,11 @@ var game;
             //下面的方法也可行，但是发送消息，多用于不同对象(class)之间的通信
             //如果是相同对象，直接调用本对象方法更容易
             //this.facade().sendNotification(PanelNotify.CLOSE_MAP);
-            //this.sendNotification(PanelNotify.CLOSE_MAP);
+            //this.sendNotification(PanelNotify.CLOSE_LOGIN);
+        };
+        /** 关闭后，需要销毁的对象,在this.closePanel(1)后调用 */
+        LonginPanelMedistor.prototype.destroy = function () {
+            //this.loginPanel = null;
         };
         LonginPanelMedistor.prototype.changeText = function (evt) {
             if (this.currentType == "login") {

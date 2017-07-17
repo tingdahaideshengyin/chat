@@ -24,6 +24,13 @@ var game;
         }
         /** 注册消息 */
         SceneManager.prototype.register = function () {
+            //登陆界面
+            this.facade().registerCommand(SceneNotify.OPEN_LOGIN_SCENE, SceneManager);
+            this.facade().registerCommand(SceneNotify.CLOSE_LOGIN_SCENE, SceneManager);
+            //角色创建界面
+            this.facade().registerCommand(SceneNotify.OPEN_CREATE_ROLE, SceneManager);
+            this.facade().registerCommand(SceneNotify.CLOSE_CREATE_ROLE, SceneManager);
+            //主城
             this.facade().registerCommand(SceneNotify.OPEN_HOME, SceneManager);
             this.facade().registerCommand(SceneNotify.CLOSE_HOME, SceneManager);
         };
@@ -31,6 +38,18 @@ var game;
             var data = notification.getBody(); //携带数据
             var panelCon = GameLayerManager.gameLayer().sceneLayer;
             switch (notification.getName()) {
+                case SceneNotify.OPEN_LOGIN_SCENE:
+                    if (this.loginScene == null) {
+                        this.loginScene = new LoginScene();
+                        panelCon.addChild(this.loginScene);
+                    }
+                    break;
+                case SceneNotify.CLOSE_LOGIN_SCENE:
+                    break;
+                case SceneNotify.OPEN_CREATE_ROLE:
+                    break;
+                case SceneNotify.CLOSE_CREATE_ROLE:
+                    break;
                 case SceneNotify.OPEN_HOME:
                     if (this.homeCity == null) {
                         this.homeCity = new game.HomeCity();

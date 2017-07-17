@@ -3,7 +3,7 @@ module PopUpManager {
 
 	/**
 	 * 添加面板方法
-	 * panel			Ui容器
+	 * panel			需要显示的UI组件
 	 * dark				背景是否变黑
 	 * popUpWidth		指定弹窗宽度，定位使用
 	 * popUpHeight		指定弹窗高度，定位使用

@@ -63,5 +63,10 @@
         "path": "core/view/pannel/pannel/PomeloTest.ts",
         "class": "PomeloTest",
         "parentPath": ""
+    },
+    "15d46ce5ab9": {
+        "path": "core/view/pannel/pannel/LoginScene.ts",
+        "class": "LoginScene",
+        "parentPath": ""
     }
 }

@@ -22,12 +22,11 @@ module game {
 
 
 		//重写消息处理
-		private loginPanel:game.LonginPanel = new game.LonginPanel();
+		private loginPanel:game.LonginPanel = new LonginPanel();;
 		public handleNotification(notification: puremvc.INotification):void
 		{
 			switch(notification.getName()){
 				case PanelNotify.OPEN_LOGIN:
-					//显示消息面板
 					this.showUI(this.loginPanel, false, 0, 0, 1);
 					break;
 				case PanelNotify.CLOSE_LOGIN:
@@ -52,6 +51,10 @@ module game {
 				case LoginNotify.NOT_ACCOUNT_OR_PASSWORD:
 					console.log(500);
 					break;
+				case LoginNotify.ACCOUNT_IS_EXISTENT:
+					console.log(601);
+				case LoginNotify.ACCOUNT_CREATE_ERROR:
+					console.log(602);
 			}
 		}
 
@@ -84,10 +87,10 @@ module game {
 			var data:string = "userName="+ name + "&" + "password=" + pwd;
 
 			if(this.currentType == "login"){
-				net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/login", data);
+				net.HttpManager.connectServerWithPost(GlobalData.getAccountServer() + "/login", data);
 				//net.HttpManager.connectServerWithPost("http://192.168.1.222:3001/login", data);
 			}else{
-				net.HttpManager.connectServerWithPost("http://123.207.53.160:3001/register", data);
+				net.HttpManager.connectServerWithPost(GlobalData.getAccountServer() + "/register", data);
 				//net.HttpManager.connectServerWithPost("http://192.168.1.222:3001/register", data);
 			}
 		}
@@ -113,11 +116,17 @@ module game {
 
 		//关闭按钮
 		private onCloseBtnTouch(evt:egret.TouchEvent){
+
 			this.closePanel(1);
 			//下面的方法也可行，但是发送消息，多用于不同对象(class)之间的通信
 			//如果是相同对象，直接调用本对象方法更容易
 			//this.facade().sendNotification(PanelNotify.CLOSE_MAP);
-			//this.sendNotification(PanelNotify.CLOSE_MAP);
+			//this.sendNotification(PanelNotify.CLOSE_LOGIN);
+		}
+
+		/** 关闭后，需要销毁的对象,在this.closePanel(1)后调用 */
+		public destroy():void{
+			//this.loginPanel = null;
 		}
 
 

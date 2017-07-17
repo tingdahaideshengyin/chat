@@ -21,7 +21,6 @@ var game;
         }
         ViewPrepCommand.prototype.execute = function (notificton) {
             var main = GameLayerManager.gameLayer().panelLayer;
-            //注册各种UI面板
             //注册天下UI
             this.facade().registerMediator(new game.MapMediator());
             //注册商店UI

@@ -3,11 +3,14 @@
 	<e:Image id="bgimage" width="720" height="1280" x="0" y="0" source="login_bg_jpg"/>
 	<e:Image width="570" height="180" x="75" y="856" source="border_101_s9_30_30_2_2_png" alpha="0.5" scale9Grid="28,28,9,7"/>
 	<e:Image id="servers" width="392" height="58" x="200" y="919" source="hero_5_png"/>
-	<e:Image id="state" width="57" height="56" x="201" y="919" source="flag_1_png"/>
+	<e:Image id="server_state" width="57" height="56" x="201" y="919" source="flag_1_png"/>
 	<e:Label id="serverText" text="测试1服" x="257" y="921" textColor="0x80f907" width="245" height="52" verticalAlign="middle" textAlign="center"/>
 	<e:Label text="若登陆不了，请尝试清理缓存，退出微信。也可以尝试重启手机" x="108" y="1260" size="18"/>
 	<e:Label id="version_lab" text="v.176" x="677" y="1262" size="18" textAlign="right"/>
 	<e:Button id="enterBtn" label="Button" x="218" y="1070" width="283" height="111" skinName="Btn103Skins"/>
+	<e:Image width="283" height="111" x="218" y="1070" source="btn_103_normal_up_png"/>
 	<e:Image id="enterImage" width="181" height="43" x="270" y="1102" source="creat_enter_png"/>
 	<e:Label text="QQ：287206570" x="279.5" y="1202" size="24" verticalAlign="middle" textAlign="center"/>
+	<e:Label id="account" text="游客登陆" x="480" y="12"/>
+	<e:Button id="account_button" label="切换" x="612" y="6" anchorOffsetY="0" height="40"/>
 </e:Skin>

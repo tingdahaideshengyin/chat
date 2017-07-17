@@ -16,6 +16,10 @@ LoginNotify.SEND_CHART_MESSAGE = "SEND_CHART_MESSAGE";
 LoginNotify.RECEIVE_CHART_MESSAGE = "RECEIVE_CHART_MESSAGE";
 /** 账号或者密码为空 */
 LoginNotify.NOT_ACCOUNT_OR_PASSWORD = "not_account_or_password";
+/** 该账号已经存在 */
+LoginNotify.ACCOUNT_IS_EXISTENT = "account_is_existent";
+/** 创建账号错误 */
+LoginNotify.ACCOUNT_CREATE_ERROR = "create_account_error";
 /** 登陆成功 */
 LoginNotify.LOGIN_SUCCESS = "loginSuccess";
 /** 账号或者密码错误 */

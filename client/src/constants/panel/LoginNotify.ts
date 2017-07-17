@@ -10,6 +10,10 @@ class LoginNotify {
 	public static RECEIVE_CHART_MESSAGE:string = "RECEIVE_CHART_MESSAGE";
 	/** 账号或者密码为空 */
 	public static NOT_ACCOUNT_OR_PASSWORD:string = "not_account_or_password";
+	/** 该账号已经存在 */
+	public static ACCOUNT_IS_EXISTENT:string = "account_is_existent";
+	/** 创建账号错误 */
+	public static ACCOUNT_CREATE_ERROR:string = "create_account_error";
 	/** 登陆成功 */
 	public static LOGIN_SUCCESS:string = "loginSuccess";
 	/** 账号或者密码错误 */

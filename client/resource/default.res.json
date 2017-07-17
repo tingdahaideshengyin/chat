@@ -5,7 +5,7 @@
 			"name": "preload"
 		},
 		{
-			"keys": "flag_1_png,flag_2_png,flag_3_png,hero_5_png,login_bg_jpg,border_101_s9_30_30_2_2_png,creat_enter_png,btn_103_normal_up_png",
+			"keys": "flag_1_png,flag_2_png,flag_3_png,hero_5_png,login_bg_jpg,border_101_s9_30_30_2_2_png,creat_enter_png,btn_103_normal_up_png,servers_json",
 			"name": "loading"
 		},
 		{
@@ -563,6 +563,11 @@
 			"url": "ui/btn/btn_133_normal_up.png",
 			"type": "image",
 			"name": "btn_133_normal_up_png"
+		},
+		{
+			"url": "config/servers.json",
+			"type": "json",
+			"name": "servers_json"
 		}
 	]
 }

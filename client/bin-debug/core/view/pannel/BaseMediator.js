@@ -21,7 +21,7 @@ var BaseMediator = (function (_super) {
         _this.isInitialized = false;
         //是否已经显示
         _this.isPopUp = false;
-        //Ui容器
+        //需要显示的UI组件
         _this.uiContener = null;
         _this.w = 0;
         _this.h = 0;

@@ -13,8 +13,7 @@ module game{
 
 		public execute( notificton:puremvc.INotification):void{
 			var main = GameLayerManager.gameLayer().panelLayer;
-			//注册各种UI面板
-
+	
 			//注册天下UI
 			this.facade().registerMediator(new MapMediator());
 			//注册商店UI
